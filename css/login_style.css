@@ -1,30 +1,26 @@
 /* CSS Document */
 body {
+    margin: 0;
     color: #1c2024;
     font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
-    background: #83001c!important;
-    /* background-image: -webkit-linear-gradient(top, #ffb300 0%, #c18c00 100%);*/
-    /*background-image: -webkit-linear-gradient(top, #c8cfcf 0%, #979C9C 100%);*/
-    margin: 0 auto;
+    background: #8e141f!important;
     width: 100%;
     height: auto;
 }
-/*header{
-    background-color: #ffb300;
-}*/
+
 ::-webkit-scrollbar{
     background-color: #fff;
     width: 5px;
 }
 ::-webkit-scrollbar-thumb{
-    background-color: #83001c;
+    background-color: #1c2024;
 }
 
 table{
     margin: auto;
 }
 td{
-    padding: 10px;
+    padding: 5px 10px;
     text-align: center;
 }
 
@@ -34,10 +30,11 @@ h1{
 }
 
 #login_area{
-    padding: 1em 0em;
+    padding: 0em 0em;
     width: 100%;
     height: auto;
     background-color: #1c2024;
+    border-radius: 0px 0px 10px 10px;
 }
 #login_area > h1{
     color: #fff;
@@ -45,20 +42,38 @@ h1{
 
 
 article{
-    margin: 1em;
-    padding: 1em 5em;
+    padding: 0em 5em 1em 5em;
 }
 header > img{
     background-color: #ffb300;
     width: 100%;
 }
+
+footer{
+    width: 100%;
+    background-color: #fff;
+    text-align: center;
+    height: auto;
+    padding: 5px 0px;
+}
+
+a:link, a:visited, a:active{
+    text-decoration: none;
+    color: #ffb300 ;
+}
+a:hover{
+    text-decoration: none;
+    color: #8e141f;
+}
+
+
 #main_page{
     background-color: #fff;
     width: 60%;
     margin-right: auto;
     margin-left: auto;
-    margin-bottom: 4em;
-    min-height: 700px;
+    margin-bottom: 2em;
+    
     
 }
 
