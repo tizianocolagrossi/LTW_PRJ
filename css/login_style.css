@@ -41,6 +41,8 @@ h1{
     text-align: center;
 }
 footer{
+    position: absolute;
+    bottom: 0;
     width: 100%;
     background-color: #fff;
     text-align: center;
@@ -63,7 +65,5 @@ footer{
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 2em;
-}
-.bordi_rot{
     border-radius: 10px 10px 10px 10px;
 }
