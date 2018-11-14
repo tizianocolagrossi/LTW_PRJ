@@ -1,15 +1,27 @@
 /* CSS Document */
 body {
-    background: #fff;
+    background: #ffb300;
+    background-image: -webkit-linear-gradient(top, #ffb300 0%, #c18c00 100%);
     margin: 0 auto;
     width: 100%;
     height: auto;
 }
-header{
-    background-color: #ffb300;
-}
+
 header > img{
     width: 100%;
+}
+#main_page{
+    background-color: #fff;
+    width: 60%;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 4em;
+    min-height: 700px;
+    
+}
+
+.cbordi{
+    border-radius: 10px 10px 10px 10px;
 }
 
 ul{
