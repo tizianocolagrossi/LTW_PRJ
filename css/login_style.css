@@ -5,8 +5,9 @@ body {
     width: 100%;
     height: auto;
 }
-
-
+header{
+    background-color: #ffb300;
+}
 
 ul{
     text-align: center;
