@@ -7,7 +7,14 @@ body {
     width: 100%;
     height: auto;
 }
-
+a:link, a:visited, a:active{
+    text-decoration: none;
+    color: #ffb300 ;
+}
+a:hover{
+    text-decoration: none;
+    color: #8e141f;
+}
 ::-webkit-scrollbar{
     background-color: #fff;
     width: 5px;
@@ -15,7 +22,13 @@ body {
 ::-webkit-scrollbar-thumb{
     background-color: #1c2024;
 }
-
+header > img{
+    background-color: #ffb300;
+    width: 100%;
+}
+article{
+    padding: 0em 5em 1em 5em;
+}
 table{
     margin: auto;
 }
@@ -23,12 +36,17 @@ td{
     padding: 5px 10px;
     text-align: center;
 }
-
 h1{
     font-size: 3em;
     text-align: center;
 }
-
+footer{
+    width: 100%;
+    background-color: #fff;
+    text-align: center;
+    height: auto;
+    padding: 5px 0px;
+}
 #login_area{
     padding: 0em 0em;
     width: 100%;
@@ -39,52 +57,13 @@ h1{
 #login_area > h1{
     color: #fff;
 }
-
-
-article{
-    padding: 0em 5em 1em 5em;
-}
-header > img{
-    background-color: #ffb300;
-    width: 100%;
-}
-
-footer{
-    width: 100%;
-    background-color: #fff;
-    text-align: center;
-    height: auto;
-    padding: 5px 0px;
-}
-
-a:link, a:visited, a:active{
-    text-decoration: none;
-    color: #ffb300 ;
-}
-a:hover{
-    text-decoration: none;
-    color: #8e141f;
-}
-
-
 #main_page{
     background-color: #fff;
     width: 60%;
     margin-right: auto;
     margin-left: auto;
     margin-bottom: 2em;
-    
-    
 }
-
-.cbordi{
+.bordi_rot{
     border-radius: 10px 10px 10px 10px;
 }
-
-ul{
-    text-align: center;
-}
-li{
-    display: inline;
-}
-
