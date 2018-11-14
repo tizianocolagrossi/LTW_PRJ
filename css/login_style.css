@@ -8,6 +8,9 @@ body {
 header{
     background-color: #ffb300;
 }
+header > img{
+    width: 100%;
+}
 
 ul{
     text-align: center;
