@@ -12,10 +12,17 @@ function validateID(ID_value){
 }
 
 function validatePW(ID_value){
-	error("password");
+	error("---TODO---");
 	//dato il codice della carta d'identità (precedentemente controllato), controllare da file se la password è associata a quell'ID
 }
 
+function login(){
+	var ID_value = document.getElementsByName('name')[0].value;
+	var PW_value = document.getElementsByName('password')[0].value;
+	if(validateID(ID_value) && validatePW(PW_value)){
+		;
+	}
+}
 function register(){
 	var ID_value = document.getElementByName("ID").value;
 	if(validateID(ID_value)){
