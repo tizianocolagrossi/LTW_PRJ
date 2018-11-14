@@ -1,13 +1,28 @@
 /* CSS Document */
 body {
-    background: #ffb300;
-    background-image: -webkit-linear-gradient(top, #ffb300 0%, #c18c00 100%);
+    background: #83001c!important;
+    /* background-image: -webkit-linear-gradient(top, #ffb300 0%, #c18c00 100%);*/
+    /*background-image: -webkit-linear-gradient(top, #c8cfcf 0%, #979C9C 100%);*/
     margin: 0 auto;
     width: 100%;
     height: auto;
 }
-
+/*header{
+    background-color: #ffb300;
+}*/
+::-webkit-scrollbar{
+    background-color: #fff;
+    width: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #83001c;
+}
+article{
+    margin: 1em;
+    padding: 1em 5em;
+}
 header > img{
+    background-color: #ffb300;
     width: 100%;
 }
 #main_page{
