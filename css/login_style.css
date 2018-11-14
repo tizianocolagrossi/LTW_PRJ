@@ -1,5 +1,7 @@
 /* CSS Document */
 body {
+    color: #1c2024;
+    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
     background: #83001c!important;
     /* background-image: -webkit-linear-gradient(top, #ffb300 0%, #c18c00 100%);*/
     /*background-image: -webkit-linear-gradient(top, #c8cfcf 0%, #979C9C 100%);*/
@@ -17,6 +19,31 @@ body {
 ::-webkit-scrollbar-thumb{
     background-color: #83001c;
 }
+
+table{
+    margin: auto;
+}
+td{
+    padding: 10px;
+    text-align: center;
+}
+
+h1{
+    font-size: 3em;
+    text-align: center;
+}
+
+#login_area{
+    padding: 1em 0em;
+    width: 100%;
+    height: auto;
+    background-color: #1c2024;
+}
+#login_area > h1{
+    color: #fff;
+}
+
+
 article{
     margin: 1em;
     padding: 1em 5em;

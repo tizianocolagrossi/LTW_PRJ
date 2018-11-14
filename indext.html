@@ -11,23 +11,31 @@
         </header>
     <div id="main_page" class="cbordi">
         <article>
-            <h1>Istruzioni</h1>
+            <h1>Portale del votatore</h1>
             <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc efficitur, magna vitae congue elementum, nulla augue lobortis orci, sed tincidunt purus urna a mauris. Duis facilisis ut enim ac venenatis. Nullam odio urna, condimentum et pellentesque sit amet, viverra at leo. Morbi nisl elit, consequat nec rutrum eget, eleifend sed nibh. Nulla purus quam, efficitur sit amet libero eu, rhoncus fermentum dui. Proin neque lacus, venenatis sed dui tempus, cursus posuere urna. Donec tristique dui a convallis consectetur. In dictum velit mauris. Proin facilisis rhoncus maximus. Maecenas ipsum diam, suscipit at mollis eu, tempor sed sapien. Aliquam erat volutpat.
-
-Suspendisse in dolor at tortor interdum ultricies quis laoreet ipsum. Donec eget mollis eros. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Quisque congue nunc non porttitor efficitur. Integer tempor et tortor quis ultrices. Donec in ligula vel metus rutrum consequat sit amet at risus. Morbi consequat libero velit, nec maximus erat feugiat sit amet. Aliquam erat volutpat. Sed ut lectus vel mauris tempor viverra. Morbi et scelerisque mi. Quisque vitae nisl augue. Duis vel libero diam. Nam et urna vitae metus egestas lobortis tempor ac eros. Duis vitae arcu vel elit dapibus pretium.
-
-Proin non felis dictum, gravida quam quis, varius tortor. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Donec tristique tellus euismod aliquet pellentesque. Fusce sed felis a nibh ultrices luctus non ut orci. Phasellus iaculis metus at odio blandit dapibus et sit amet ipsum. Aliquam eros elit, consectetur sit amet sem sed, malesuada pellentesque eros. Nulla facilisi. Vivamus aliquam, sapien ut posuere vulputate, magna diam sollicitudin lectus, sed elementum erat tellus ut elit. Cras consequat risus sed lacus euismod, eu tempor augue varius. Etiam facilisis, augue nec dignissim euismod, purus ligula tempus purus, eu imperdiet enim velit vel.
+                Benvenuto nel nuovo portale ideato per permettere di votare da casa ai cittadini di roma capitale
+                se è la prima volta che visiti questo portale devi prima iscriverti <a href="">qui</a> 
             </p>
         </article>
+    <div id="login_area"> 
         <h1>Accedi per votare</h1>
+    <table>
         <form method="post" action="">
-            <input type="text" name="name" placeholder="ID">
-            <input type="password" name="password" placeholder="password">
-        	<input type="submit" name="Accedi" onClick="login()"> 
-           	<input type="button" name="Registrati" value="Registrati" >
+            <tr><td><input type="text" name="name" placeholder="ID"></td><td><input type="password" name="password" placeholder="password"></td></tr>
+        	<tr>
+                <td colspan="2">
+                    <input type="submit" name="Accedi" onClick="login()"> 
+           	        <input type="button" name="Registrati" value="Registrati" >
+                </td>
+            </tr>
+            <tr>                
+                <td colspan="2">
+                    <a href="./pwlost.html">Password dimenticata</a>
+                </td>
+            </tr>
         </form>   
-        <a href="./pwlost.html">Password dimenticata</a>
+    </table>
+    </div>
     </div>
 </body>
 <script async src="js/logic.js"></script>
