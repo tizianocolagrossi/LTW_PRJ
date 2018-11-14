@@ -5,19 +5,19 @@
 <title>Login</title>
 <link href="css/login_style.css" rel="stylesheet" type="text/css">
 </head>
-<body>
-    <div id="box_login">
+<body> 
+        <header>
+            <img src="img/testata.png" alt="img_testata">
+        </header>
+        
         <form method="post" action="">
             <input type="text" name="name" placeholder="ID">
-            <input type="password" name="password" placeholder="password"><br>
-            <input type="submit" onClick="validateID(document.getElementsByName('name')[0].value)"> 
-            <input type="reset">
-        </form>
-        <ul>
-            <li><a href="./iscriviti.html">Iscriviti</a></li>
-            <li><a href="./pwlost.html">Password dimenticata</a></li>
-        </ul>
-    </div>
+            <input type="password" name="password" placeholder="password">
+        	<input type="submit onClick="validateID(document.getElementsByName('name')[0].value)""> 
+           	<input type="reset">
+        </form>   
+        <a href="./iscriviti.html">Iscriviti</a>
+        <a href="./pwlost.html">Password dimenticata</a>
 </body>
 <script async src="js/logic.js"></script>
 </html>
