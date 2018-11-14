@@ -11,7 +11,7 @@ function validateID(ID_value){
 	else error("Codice non valido");
 }
 
-function validatePW(ID_value){
+function validatePW(ID_value, PW_value){
 	error("---TODO---");
 	//dato il codice della carta d'identità (precedentemente controllato), controllare da file se la password è associata a quell'ID
 }
@@ -19,8 +19,8 @@ function validatePW(ID_value){
 function login(){
 	var ID_value = document.getElementsByName('name')[0].value;
 	var PW_value = document.getElementsByName('password')[0].value;
-	if(validateID(ID_value) && validatePW(PW_value)){
-		;
+	if( validateID(ID_value) && validatePW(ID_value, PW_value) ){
+		error("---TODO---");
 	}
 }
 function register(){
