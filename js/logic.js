@@ -38,28 +38,32 @@ function validateCF(CF_value){
 /*====== Service functions ======*/
 
 function login(){
+	console.log("Trying login");
 	var ID_value = document.getElementsByName('name')[0].value;
 	var PW_value = document.getElementsByName('password')[0].value;
 	if( validateID(ID_value) && validatePW(ID_value, PW_value) ){
+		console.log("logged");
 		error("---TODO login---");
 		//window.location("url-pagina-loggata");
 	}
 }
 
 function register(){
+	console.log("Trying registration");
 	var nome = document.getElementsByName("nome")[0].value;
 	var cognome = document.getElementsByName("cognome")[0].value;
 	var ID_value = document.getElementsByName("cid")[0].value;
 	var CF_value = document.getElementsByName("cf")[0].value;
 	var email = document.getElementsByName("email")[0].value;
-	var password = document.getElementsByName("password")[0].value;
+	var password = document.getElementsByName("pw")[0].value;
 	var confirm_pw = document.getElementsByName("confirmpw")[0].value;
 	
 	if(nome != ""){
 		if(cognome != ""){
 			if(validateID(ID_value)){
-				if(validateCF(CF_value){
+				if(validateCF(CF_value)){
 					if(password == confirm_pw){
+						console.log("registered");
 						error("---TODO salvataggio dei dati---");
 						//window.location("url-pagina-successo");
 						
