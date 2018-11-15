@@ -1,11 +1,12 @@
 /* CSS Document */
+html{height: 100%;}
 body {
     margin: 0px;
     color: #1c2024;
     font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
     background: #8e141f!important;
     width: 100%;
-    height: auto;
+    height: 100%;
 }
 a:link, a:visited, a:active{
     text-decoration: none;
@@ -62,9 +63,19 @@ p{
     padding: 0em 5em 3em;
 }
 
-
 footer>img{
-    position: absolute;
-    bottom: 0;
+    position: relative;
     width: 100%;
+    bottom: 0;
+    margin: 0px 0px -5px;
+}
+#cont{
+    display: block;
+    min-height: 100%;
+    height: auto !important;
+    height: 100%;
+    margin: 0 auto -50px;
+}
+#push{
+    height: 100px;
 }
