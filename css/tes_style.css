@@ -42,6 +42,7 @@ a:hover{
     margin-right: auto;
     margin-left: auto;
     border-radius: 0px 0px 10px 10px;
+    padding-bottom: 2em;
 }
 nav{
     background-color: #1c2024;
@@ -70,46 +71,38 @@ footer>img{
     bottom: 0;
     margin: 0px 0px -5px;
 }
-.container_elettorale{
-    background-color: #000;
-    border: #1c2024 solid;
-    padding: 1em;
-    
-}
-.main_tab{
-    display: inline;
-    padding: .25em;
-}
-#cot_tab{
-    text-align: center;
-    width: 100%;
-    display:block;
-    margin:auto;
+
+table{
+    margin: 0 auto;
+    width: 80%;
 }
 th{
-    width: 480px;
     background-color: #fff;
     border: #1c2024 solid;
-    padding: 2px 10px;
+    margin: 0;
+    padding: .5em;
 }
-
-.partito{
- 
-    background-color: #fff;
-    border: #1c2024 solid;
-    height: 100px !important;
-    width: 240px !important;
-    
+td{
+   background-color: #fff;
+    border: #1c2024 solid; 
+    width: 50%
 }
-
-.hd{
-    margin:0;
-    padding:0 3em;
+.space{
+    height: 30px;
 }
-h6.hd{
-    margin-top: -200;
+.void{
+    height: 100px;
+    width:100px;
+    background-color: rgba(0,0,0,0.00);
+    border: rgba(0,0,0,0.00);
 }
-
+.imgp{
+    width: 100px;
+    height: 100px;
+}
+h1,h4{
+    margin: 0;
+}
 #cont{
     display: block;
     min-height: 100%;
