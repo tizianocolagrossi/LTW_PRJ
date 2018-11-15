@@ -7,7 +7,7 @@
 */
 
 
-var ID_reg_expression = /[A-Z][A-Z]\d{7}||C[A-Z]\d{5}[A-Z][A-Z]/;
+var ID_reg_expression = /[A-Z][A-Z]\d{7}||C[A-Z]\d{5}[A-Z][A-Z]/
 var Email_reg_expression = /[A-Z||a-z||0-9]+@[A-Z||a-z]+\.[A-Z||a-z]/
 var CF_reg_expression = /[A-Z]{6}\d{2}[A-Z]\d{2}[A-Z]\d{3}[A-Z]/
 
@@ -28,27 +28,29 @@ var CF_reg_expression = /[A-Z]{6}\d{2}[A-Z]\d{2}[A-Z]\d{3}[A-Z]/
 
 
 function validateID(ID_value){
+	if(ID_value == "") return false;
 	var ret_boolean = ID_reg_expression.test(ID_value);
 	//if(!ret_boolean) error("Carta d'identità non valida");
+	console.log(ID_value + " " + ret_boolean);
 	return ret_boolean;
 }
 
 function validatePW(ID_value, PW_value){
-	if(PW_value == ""){
-		//dato il codice della carta d'identità (precedentemente controllato), controllare da file se la password è associata a quell'ID
-		return false
-	}
+	if(PW_value == "") return false;
+	//dato il codice della carta d'identità (precedentemente controllato), controllare da file se la password è associata a quell'ID
 	console.log("---TODO password---")
 	return true;
 }
 
 function validateEmail(Email_value){
+	if(Email_value == "") return false;
 	var ret_boolean = Email_reg_expression.test(Email_value);
 	//if(!ret_boolean) error("E-mail non valida");
 	return ret_boolean;
 }
 
 function validateCF(CF_value){
+	if(CF_value == "") return false;
 	var ret_boolean = CF_reg_expression.test(CF_value);
 	//if(!ret_boolean) error("Codice fiscale non valido");
 	return ret_boolean;
@@ -112,10 +114,8 @@ function register(){
 function recoverPw(){
 	console.log("Trying to recover pw");
 	var ID_value = document.getElementsByName("cid")[0].value;
-	console.log(ID_value);
 	if(validateID(ID_value)){
 		var hidden_div = document.getElementById("hiddenText");
-		console.log(hidden_div);
 		hidden_div.removeAttribute("hidden");
 	}else error("Carta d'Identità non valida");
 }
