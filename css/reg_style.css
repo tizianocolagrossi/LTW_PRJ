@@ -35,12 +35,13 @@ a:hover{
 nav{
     background-color: #1c2024;
     padding-top: 15px;
+    padding-bottom: 10px;
     
 }
 nav>ul{
     display: inline;
     text-align: center;
-    margin: 5px 0px;
+    margin:  5px 0px;
 }
 nav>ul>li{
     list-style-type: none;
