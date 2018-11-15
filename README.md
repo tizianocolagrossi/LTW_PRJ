@@ -6,4 +6,5 @@ TODO:
 
 pagina: registrazione eseguita con successo
 pagina: home page una volta loggato 
+pagina: recupero password eseguito con successo
 

@@ -14,8 +14,23 @@
                     <li><a href="index.html">Torna alla Home</a></li>
                 </ul>
             </nav>
-            <h1>hahahaha idiota</h1>
-            
+            <div>
+            	Inserire il codice della Carta d'Identit&agrave :
+            </div>
+            <div>
+            	<form method="post" action="" name="registration">
+                <tr><td><input type="text" placeholder="CID" name="cid"></td></tr>
+                <tr><td colspan="2"><input type="submit" name="Recover_CID" onclick="recoverPw()"></td></tr>
+            </div>
+        	<div id="hiddenText" hidden>
+        		Abbiamo inviato un codice segreto all'E-mail associata alla Carta d'Identit&agrave inserita
+        		<br>
+        		Inserisci il codice :
+        		<div>
+        			<input type="text" placeholder="Codice" name="code">
+        			<input type="submit" name="Recover_Code" onclick="insertSecretCode()">
+        		</div>
+        	</div>
         </div>
         <div id="push"></div>
         <footer>

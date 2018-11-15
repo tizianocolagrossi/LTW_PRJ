@@ -54,6 +54,11 @@ function validateCF(CF_value){
 	return ret_boolean;
 }
 
+function validateSecretCode(secret_code){
+	//controllo del codice da implementare
+	return (secret_code != "");
+}
+
 
 /*
 **=
@@ -75,7 +80,7 @@ function log_in(){
 			//window.location("url-pagina-loggata");
 			
 		}else error("Password non valida");
-	}else error("Carta d'identità non valida");
+	}else error("Carta d'Identità non valida");
 }
 
 function register(){
@@ -95,13 +100,32 @@ function register(){
 					if(password == confirm_pw){
 						console.log("Succesfully registered");
 						error("---TODO salvataggio dei dati---");
-						//window.location("url-pagina-successo");
+						//window.location("url-login-success");
 						
 					}else error("Le password inserite non sono uguali");
 				}else error("Codice fiscale non valido");
-			}else error("Carta d'identità non valida");
+			}else error("Carta d'Identità non valida");
 		}else error("Cognome non valido");
 	}else error("Nome non valido");
+}
+
+function recoverPw(){
+	console.log("Trying to recover pw");
+	var ID_value = document.getElementsByName("cid")[0].value;
+	console.log(ID_value);
+	if(validateID(ID_value)){
+		var hidden_div = document.getElementById("hiddenText");
+		console.log(hidden_div);
+		hidden_div.removeAttribute("hidden");
+	}else error("Carta d'Identità non valida");
+}
+
+function insertSecretCode(){
+	var secret_code = document.getElementsByName("code")[0].value;
+	if(validateSecretCode(secret_code)){
+		console.log("Succesfully recovered");
+		//window.location("url-recoveredPw-success");
+	}else error("Codice inserito non valido");
 }
 
 function error(error_message){
