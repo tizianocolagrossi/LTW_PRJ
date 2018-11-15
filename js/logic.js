@@ -1,15 +1,15 @@
 /*
 **=
-**===
-**===== Global variables ======
-**===
+**===   /----------------\
+**=====  Global variables
+**===   \----------------/
 **=
 */
 
 
-var ID_reg_expression = /[A-Z][A-Z]\d{7}||C[A-Z]\d{5}[A-Z][A-Z]/
-var Email_reg_expression = /[A-Z||a-z||0-9]+@[A-Z||a-z]+\.[A-Z||a-z]/
-var CF_reg_expression = /[A-Z]{6}\d{2}[A-Z]\d{2}[A-Z]\d{3}[A-Z]/
+var ID_reg_expression = /[A-Z][A-Z]\d{7}||C[A-Z]\d{5}[A-Z][A-Z]/;
+var Email_reg_expression = /[A-Z||a-z||0-9]+@[A-Z||a-z]+\.[A-Z||a-z]/;
+var CF_reg_expression = /[A-Z]{6}\d{2}[A-Z]\d{2}[A-Z]\d{3}[A-Z]/;
 
 /*function inizializeDB(){
 	var file = new File([txt], "database.txt", {type: "application/octet-stream"});
@@ -20,9 +20,9 @@ var CF_reg_expression = /[A-Z]{6}\d{2}[A-Z]\d{2}[A-Z]\d{3}[A-Z]/
 
 /*
 **=
-**===
-**===== Validate functions ======
-**===
+**===   /------------------\
+**=====  Validate functions
+**===   \------------------/
 **=
 */
 
@@ -64,9 +64,9 @@ function validateSecretCode(secret_code){
 
 /*
 **=
-**===
-**===== Service functions ======
-**===
+**===   /-----------------\
+**=====  Service functions 
+**===   \-----------------/
 **=
 */
 
@@ -99,12 +99,14 @@ function register(){
 		if(cognome != ""){
 			if(validateID(ID_value)){
 				if(validateCF(CF_value)){
-					if(password == confirm_pw){
-						console.log("Succesfully registered");
-						error("---TODO salvataggio dei dati---");
-						//window.location("url-login-success");
+					if(password != ""){
+						if(password == confirm_pw){
+							console.log("Succesfully registered");
+							error("---TODO salvataggio dei dati---");
+							//window.location("url-login-success");
 						
-					}else error("Le password inserite non sono uguali");
+						}else error("Le password inserite non sono uguali");
+					}else error("Password non valida")
 				}else error("Codice fiscale non valido");
 			}else error("Carta d'Identità non valida");
 		}else error("Cognome non valido");
