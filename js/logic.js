@@ -13,7 +13,7 @@ function inizializeDB(){
 
 function validateID(ID_value){
 	var ret_boolean = ID_reg_expression.test(ID_value);
-	if(!ret_boolean) error("Carta d'identità non valida");
+	//if(!ret_boolean) error("Carta d'identità non valida");
 	return ret_boolean;
 }
 
@@ -25,27 +25,30 @@ function validatePW(ID_value, PW_value){
 
 function validateEmail(Email_value){
 	var ret_boolean = Email_reg_expression.test(Email_value);
-	if(!ret_boolean) error("E-mail non valida");
+	//if(!ret_boolean) error("E-mail non valida");
 	return ret_boolean;
 }
 
 function validateCF(CF_value){
 	var ret_boolean = CF_reg_expression.test(CF_value);
-	if(!ret_boolean) error("Codice fiscale non valido");
+	//if(!ret_boolean) error("Codice fiscale non valido");
 	return ret_boolean;
 }
 
 /*====== Service functions ======*/
 
-function login(){
+function log_in(){
 	console.log("Trying login");
 	var ID_value = document.getElementsByName('name')[0].value;
 	var PW_value = document.getElementsByName('password')[0].value;
-	if( validateID(ID_value) && validatePW(ID_value, PW_value) ){
-		console.log("logged");
-		error("---TODO login---");
-		//window.location("url-pagina-loggata");
-	}
+	if(validateID(ID_value)){
+		if(validatePW(ID_value, PW_value)){
+			console.log("logged");
+			error("---TODO login---");
+			//window.location("url-pagina-loggata");
+			
+		}else error("Password non valida");
+	}else error("Carta d'identità non valida");
 }
 
 function register(){
@@ -68,8 +71,8 @@ function register(){
 						//window.location("url-pagina-successo");
 						
 					}else error("Le password inserite non sono uguali");
-				}
-			}
+				}else error("Codice fiscale non valido");
+			}else error("Carta d'identità non valida");
 		}else error("Cognome non valido");
 	}else error("Nome non valido");
 	
