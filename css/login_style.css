@@ -23,6 +23,9 @@ a:hover{
 ::-webkit-scrollbar-thumb{
     background-color: #1c2024;
 }
+.btn{
+	width: 130px;
+}
 header > img{
     background-color: #ffb300;
     width: 100%;
