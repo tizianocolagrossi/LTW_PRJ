@@ -20,9 +20,9 @@ var CF_reg_expression = /[A-Z]{6}\d{2}[A-Z]\d{2}[A-Z]\d{3}[A-Z]/;
 
 /*
 **=
-**===   /------------------\
-**=====  Validate functions
-**===   \------------------/
+**===   /--------------------\
+**=====  Validation functions
+**===   \--------------------/
 **=
 */
 
@@ -30,8 +30,6 @@ var CF_reg_expression = /[A-Z]{6}\d{2}[A-Z]\d{2}[A-Z]\d{3}[A-Z]/;
 function validateID(ID_value){
 	if(ID_value == "") return false;
 	var ret_boolean = ID_reg_expression.test(ID_value);
-	//if(!ret_boolean) error("Carta d'identità non valida");
-	console.log(ID_value + " " + ret_boolean);
 	return ret_boolean;
 }
 
@@ -45,14 +43,12 @@ function validatePW(ID_value, PW_value){
 function validateEmail(Email_value){
 	if(Email_value == "") return false;
 	var ret_boolean = Email_reg_expression.test(Email_value);
-	//if(!ret_boolean) error("E-mail non valida");
 	return ret_boolean;
 }
 
 function validateCF(CF_value){
 	if(CF_value == "") return false;
 	var ret_boolean = CF_reg_expression.test(CF_value);
-	//if(!ret_boolean) error("Codice fiscale non valido");
 	return ret_boolean;
 }
 
@@ -94,6 +90,7 @@ function register(){
 	var email = document.getElementsByName("email")[0].value;
 	var password = document.getElementsByName("pw")[0].value;
 	var confirm_pw = document.getElementsByName("confirmpw")[0].value;
+	var municipio = document.getElementsByName("municipio")[0].value;
 	
 	if(nome != ""){
 		if(cognome != ""){
@@ -103,7 +100,7 @@ function register(){
 						if(password == confirm_pw){
 							console.log("Succesfully registered");
 							error("---TODO salvataggio dei dati---");
-							//window.location("url-login-success");
+							//window.location("url-register-success");
 						
 						}else error("Le password inserite non sono uguali");
 					}else error("Password non valida")
