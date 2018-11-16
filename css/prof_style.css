@@ -14,6 +14,8 @@ html, body{
     height: 100%;
     width: 75px;
     color: #fff;
+    border-right: #5c6b78 solid;
+    border-right-width: thin;
 }
 .icobar{
     width: 35px;
@@ -32,7 +34,7 @@ html, body{
     position: absolute;
     bottom: 10px;
     height: 45px;
-    width: 75px;
+    width: 35px;
 }
 #home{
     background-image: url("../icons/md-contact.svg");
