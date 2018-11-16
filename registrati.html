@@ -17,12 +17,15 @@
             <h1>Registrati</h1>
             <table>
                 <form method="post" action="" name="registration">
-                <tr><td><input type="text" placeholder="Nome" name="nome"></td><td><input type="text" placeholder="Cognome" name="cognome"></td></tr>
-                <tr><td><input type="text" placeholder="CID" name="cid"></td><td><input type="email" placeholder="E-mail" name="email"></td></tr>
-                <tr><td><input type="password" placeholder="Password" name="pw"></td><td><input type="password" placeholder="Conferma password" name="confirmpw"></td></tr>
-                <tr><td><input type="text" name="cf" placeholder="Codice Fiscale"></td>
+                <tr><td><input type="text" placeholder="Nome" name="nome" pattern="[A-Za-z]+" required></td>
+                	<td><input type="text" placeholder="Cognome" name="cognome" pattern="[A-Za-z]+" required></td></tr>
+                <tr><td><input type="text" placeholder="CID" name="cid" required></td>
+                	<td><input type="email" placeholder="E-mail" name="email" required></td></tr>
+                <tr><td><input type="password" placeholder="Password" name="pw" required></td>
+                	<td><input type="password" placeholder="Conferma password" name="confirmpw" required></td></tr>
+                <tr><td><input type="text" name="cf" placeholder="Codice Fiscale" required></td>
                     <td>
-                        <select class="campo" size="1" cols="15" name="municipio">
+                        <select class="campo" size="1" cols="15" name="municipio" required>
                             <option selected value="---">Inserisci municipio</option>
                             <option value="m1">Municipio 1</option>
                             <option value="m2">Municipio 2</option>
