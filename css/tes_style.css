@@ -85,8 +85,8 @@ th{
 td{
    background-color: #fff;
     border: #1c2024 solid; 
-    width: 50%
-}
+    width: 50%;
+    }
 .space{
     height: 30px;
 }
@@ -100,8 +100,17 @@ td{
 .imgp{
     width: 100px;
     height: 100px;
-    display: inline;
+    display: inline-block;
+    vertical-align:middle;
 }
+.candidi{
+    
+    display: inline-block;
+    vertical-align:middle;
+    right: 0px;
+    padding-left: 10%;
+}
+
 h1,h4{
     margin: 0;
 }
