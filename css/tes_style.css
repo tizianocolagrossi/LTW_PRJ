@@ -114,6 +114,11 @@ td{
 h1,h4{
     margin: 0;
 }
+.cont_btn{
+    padding: .5em 3em;
+    text-align: center;
+    
+}
 #cont{
     display: block;
     min-height: 100%;
