@@ -51,7 +51,7 @@ h1{
     font-size: 3em;
 }
 table{
-    margin: auto;
+    margin: 2em auto auto;
 }
 td{
     padding: 5px;

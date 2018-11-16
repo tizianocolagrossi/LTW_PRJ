@@ -99,9 +99,8 @@ function register(){
 					if(password != ""){
 						if(password == confirm_pw){
 							console.log("Succesfully registered");
-							error("---TODO salvataggio dei dati---");
-							//window.location("url-register-success");
-						
+							console.log("---TODO salvataggio dei dati---");
+							window.location.href=("reg_success.html");						
 						}else error("Le password inserite non sono uguali");
 					}else error("Password non valida")
 				}else error("Codice fiscale non valido");
@@ -123,7 +122,7 @@ function insertSecretCode(){
 	var secret_code = document.getElementsByName("code")[0].value;
 	if(validateSecretCode(secret_code)){
 		console.log("Succesfully recovered");
-		//window.location("url-recoveredPw-success");
+		window.location.href=("recpw_success.html");
 	}else error("Codice inserito non valido");
 }
 
