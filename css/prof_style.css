@@ -1,0 +1,54 @@
+/* CSS Document */
+html, body{
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
+    color: #1c2024;
+}
+
+#navbar{
+    position: absolute;
+    background-color: #fcc;
+    height: 100%;
+    width: 75px;
+    color: #fff;
+}
+.icobar{
+    width: 35px;
+    height: 35px;
+}
+.icobarcont{
+    padding: 15px 20px;
+}
+#homebg{
+    margin-top: 10px;  
+}
+.icobarcont:hover{
+    background-color: #fff;
+}
+#logoutbg{
+    position: absolute;
+    bottom: 10px;
+    height: 45px;
+    width: 75px;
+}
+#home{
+    background-image: url("../icons/md-contact.svg");
+}
+#calendar{
+    background-image: url("../icons/md-calendar.svg");
+}
+#option{
+    background-image: url("../icons/md-options.svg");
+}
+#vote{
+    background-image: url("../icons/md-paper.svg");
+}
+#logout{
+    position: absolute;
+    bottom: 20px;
+    background-image: url("../icons/md-log-out.svg");
+}
+
