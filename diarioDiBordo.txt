@@ -5,5 +5,12 @@ Ancora non avevamo pensato a un diario di bordo
 Abbiamo pensato ad un diario di bordo, ma niente, non l'abbiamo scritto
 	
 #########Giorno 3 (16/11/28):
+(DAVIDE)
 Diario di bordo,
 sono le 19:06 del 16 Novembre 2018, e abbiamo deciso di scrivere un diario di bordo. Ieri ho smadonnato sulle grammatiche regolari. Oggi ho   scritto le mie prime righe su css. Sono felice che lo fa Tiziano. Il progetto è a buon punto, e abbiamo scoperto di avere ancora un mese per presentarlo. Immagino che finiremo per prendercela troppo comoda e non faremo nulla, finendo per presentare il progetto offline in locale. Sicuuuro.
+(TIZIANO)
+Diario di bordo,
+sono le 02.07 di sabato 17 Novembre 2018, ho appena finito di aggiungere una cazzo di barra laterale che alla fine è stato meno peggio che centrare le tabelle della scheda elettorale. Alla fine il lavoro procede abbastanza linearmente, manca da aggiungere 2 pagine principali, il calendario e la pagina delle opzioni e bisogna finire la pagina del profilo. poi bisognerà aggiungere la logica dietro e aggiungere "zucchero".
+*bzz* Tiziano, chiudo *bzz*
+
+
