@@ -24,11 +24,8 @@ a:hover{
     background-color: #1c2024;
 }
 
-header > img{
-    background-color: #ffb300;
-    width: 100%;
-}
 h3{
+    margin-top: 2em;
 	text-align: center;
 }
 article{
@@ -41,7 +38,7 @@ article{
 }*/
 
 footer{
-    
+    position: absolute;
     width: 100%;
     bottom: 0;
     background-color: #fff;
@@ -61,7 +58,7 @@ footer{
 #main_content{
     background-color: #fff;
     width: 60%;
-    margin-top: -1em;
+    margin-top: 0em;
     height: auto;
     margin-right: auto;
     margin-left: auto;
