@@ -1,0 +1,69 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Opzioni</title>
+<link href="css/bar_style.css" rel="stylesheet" type="text/css">
+<link href="css/opt_style.css" rel="stylesheet" type="text/css">
+</head>
+
+<body>
+    
+            <nav id="navbar">
+                <a href="profilo.html"><div class="icobarcont" id="homebg">
+            <div class="icobar" id="home"></div>
+            </div></a>
+            <a href="cal.html"><div class="icobarcont" id="calendarbg">
+                <div class="icobar" id="calendar"></div>
+            </div></a>
+            <a href="opt.html"><div class="icobarcontactive" id="optionbg">
+                <div class="icobar" id="option"></div>
+            </div></a>
+            <a href="scheda_elettorale.html"><div class="icobarcont" id="votebg">
+                <div class="icobar" id="vote"></div>
+            </div></a>
+            <a href="index.html"><div class="icobarcont" id="logoutbg">
+                <div class="icobar" id="logout"></div>
+            </div></a>
+            </nav> 
+        
+    <div id="cont">
+        <div id="main_content">
+        <table>
+            <form method="post" action="">
+            <tr>   
+                <th colspan="3">Cambia Password</th>
+            </tr>
+                <td>Vecchia pw</td><td><input class="campo" type="password" name="old_pw" maxlength="20" required></td>
+            <tr>
+            </tr>
+                <td>Nuova</td><td><input class="campo" type="password" name="new_1_pw" maxlength="20" required></td>
+            <tr>
+            </tr>
+            <tr>
+                <td>Ripeti</td><td><input class="campo" type="password" name="new_2_pw" maxlength="20" required></td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" value="Salva"></td>
+            </tr>
+            </form>
+            <form method="post" action="">
+            <tr>
+                <th colspan="2">Cambia E-mail</th>
+            </tr>
+                <td>Password</td><td><input type="password" name="pw" maxlength="20" required></td>
+            <tr>
+            </tr>
+            <tr>
+                <td>Nuova E-mail</td><td><input type="email" required</td>
+            </tr>
+            <tr>
+                <td colspan="2"><input type="button" value="Salva"></td>
+            </tr>
+            </form>
+        </table>
+    </div> 
+    </div>
+</body>
+<script async src="js/logic.js"></script>
+</html>
