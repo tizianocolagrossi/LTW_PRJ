@@ -5,8 +5,9 @@ body {
     color: #1c2024;
     font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
     background: #FFBEB5!important;
-    width: 100%;
+    width: auto;
     height: 100%;
+    padding-left: 75px;
 }
 #ht{
     margin: 1em auto;
