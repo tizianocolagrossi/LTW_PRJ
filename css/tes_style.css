@@ -4,7 +4,8 @@ body {
     margin: 0px;
     color: #1c2024;
     font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
-    background: #FFBEB5!important;
+    background: #FFBEB5;
+    background: #74D8C6!important;
     width: auto;
     height: 100%;
     padding-left: 75px;
@@ -45,21 +46,6 @@ a:hover{
     border-radius: 0px 0px 10px 10px;
     padding-bottom: 2em;
 }
-nav{
-    background-color: #1c2024;
-    padding-top: 15px;
-    padding-bottom: 10px;
-    
-}
-nav>ul{
-    display: inline;
-    text-align: center;
-    margin:  5px 0px;
-}
-nav>ul>li{
-    list-style-type: none;
-}
-
 
 
 p{

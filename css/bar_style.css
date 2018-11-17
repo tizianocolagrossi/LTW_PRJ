@@ -4,8 +4,12 @@ html, body{
     padding: 0;
     height: 100%;
     width: 100%;
-    font-family: "Gill Sans", "Gill Sans MT", "Myriad Pro", "DejaVu Sans Condensed", Helvetica, Arial, "sans-serif";
-    color: #1c2024;
+}
+nav{
+    background-color: #1c2024;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    
 }
 
 #navbar{
@@ -23,11 +27,14 @@ html, body{
     width: 35px;
     height: 35px;
 }
-.iconbarcontactive{
+.icobarcontactive{
     padding: 15px 20px;
     /*aggiungere colore del campo attivo e nel html sostituire la classe
     iconbarcont con iconbarcontactive*/
-    background-color: crimson;
+    background-color: #fff;
+    background: -moz-linear-gradient(-45deg, #fff 0%, #676767 100%);
+    background: -webkit-linear-gradient(135deg, #fff 0%, #676767 100%);
+    background: linear-gradient(135deg, #fff 0%, #676767 100%);
 }
 .icobarcont{
     padding: 15px 20px;
