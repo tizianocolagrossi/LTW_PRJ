@@ -10,12 +10,13 @@ html, body{
 
 #navbar{
     position: absolute;
-    background-color: #fcc;
+    background-color: #1c2024;
     height: 100%;
     width: 75px;
     color: #fff;
     border-right: #5c6b78 solid;
     border-right-width: thin;
+    
 }
 .icobar{
     width: 35px;
@@ -28,7 +29,10 @@ html, body{
     margin-top: 10px;  
 }
 .icobarcont:hover{
-    background-color: #fff;
+    background-color: #ffb300;
+    background: -moz-linear-gradient(-45deg, #ffb300 0%, #ce8600 100%);
+    background: -webkit-linear-gradient(135deg, #ffb300 0%, #ce8600 100%);
+    background: linear-gradient(135deg, #ffb300 0%, #ce8600 100%);
 }
 #logoutbg{
     position: absolute;
