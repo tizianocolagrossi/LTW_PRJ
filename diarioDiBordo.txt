@@ -13,4 +13,6 @@ Diario di bordo,
 sono le 02.07 di sabato 17 Novembre 2018, ho appena finito di aggiungere una cazzo di barra laterale che alla fine è stato meno peggio che centrare le tabelle della scheda elettorale. Alla fine il lavoro procede abbastanza linearmente, manca da aggiungere 2 pagine principali, il calendario e la pagina delle opzioni e bisogna finire la pagina del profilo. poi bisognerà aggiungere la logica dietro e aggiungere "zucchero".
 *bzz* Tiziano, chiudo *bzz*
 
-
+#########Giorno 4 (17/11/28)
+(DAVIDE)
+Ho iniziato a implementare la validazione della scheda elettorale; dopo aver implementato una soluzione becera ma funzionante, ho capito che per farne una decente ci vorrà un attimo di coordinazione tra js, css e html. Che palle. Vado a cena.
