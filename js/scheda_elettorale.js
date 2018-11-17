@@ -1,6 +1,26 @@
+/*
+**=
+**===   /----------------\
+**=====  Global variables
+**===   \----------------/
+**=
+*/
+
+
+var recap_voto = "";
+
+
+/*
+**=
+**===   /--------------------\
+**=====  Validation functions
+**===   \--------------------/
+**=
+*/
+
 function validateScheda(){
-	var lista_scelta;
-	var candidato_scelto;
+	var lista_scelta=null;
+	var candidato_scelto=null;
 	
 	var liste = document.getElementsByName("lista");
 	for(i=0; i<liste.length; i++){
@@ -19,17 +39,51 @@ function validateScheda(){
 	console.log(candidato_scelto.parentElement.className[13]);
 	*/
 	
-	var numero_lista_candidato = candidato_scelto.parentElement.className[13]; 
-	if(lista_scelta.value != numero_lista_candidato) return false;
-	else return true;
+	if(lista_scelta != null){
+		recap_voto = "Hai scelto la lista " + lista_scelta.value;
+		if(candidato_scelto != null){
+			recap_voto += " della quale hai scelto il candidato " + candidato_scelto.value;
+			var numero_lista_candidato = candidato_scelto.parentElement.className[13]; // <----- implementazione stile Luca Giurato
+			if(lista_scelta.value == numero_lista_candidato){
+				recap_voto += ".\nVuoi confermare il voto?";
+				return true;
+			}
+			else{
+				recap_voto = "";
+				return false;
+			}
+		}
+		else recap_voto += " senza esprimere nessuna preferenza";
+		recap_voto += ".\nVuoi confermare il voto?";
+		return true;
+	}
+	else{
+		recap_voto = "";
+		return false;
+	}
 	
-}
+}	
+
+
+/*
+**=
+**===   /-----------------\
+**=====  Service functions 
+**===   \-----------------/
+**=
+*/
+
 
 function inviaVoto(){
 	var scheda_valida = validateScheda();
 	if(scheda_valida){
 		console.log("scheda valida");
-		//window.location.href="url-recap-voto";
+		// ??window.location.href = "url-recap-voto";
+		if(window.confirm(recap_voto)){
+			console.log("voto confermato");
+			//window.location.href = "url-voto-success";
+		}
+		else console.log("voto non confermato");
 	}
 	else error("La scheda non è valida");
 }
