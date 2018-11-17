@@ -22,6 +22,11 @@ html, body{
     width: 35px;
     height: 35px;
 }
+.iconbarcontactive{
+    padding: 15px 20px;
+    /*aggiungere colore del campo attivo e nel html sostituire la classe
+    iconbarcont con iconbarcontactive*/
+}
 .icobarcont{
     padding: 15px 20px;
 }
