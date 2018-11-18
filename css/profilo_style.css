@@ -9,6 +9,13 @@ body{
     height: 100%;
     padding-left: 75px;
 }
+::-webkit-scrollbar{
+    background-color: #fff;
+    width: 5px;
+}
+::-webkit-scrollbar-thumb{
+    background-color: #1c2024;
+}
 header{
     padding: 1em;
 }
@@ -25,11 +32,49 @@ figcaption{
 }
 h1{
     margin-top: 2em;
-    font-size: 2.5em;
+    font-size: 3em;
     text-align: center;
 }
-
-
+.hub_notizie{
+    margin: 2em auto 0;
+    width: 100%;
+    height: auto;
+    text-align: center
+}
+.notizia{
+    vertical-align: top;
+    min-width: 200px;
+    margin: 1em 1em;
+    display: inline-block;
+    height: 450px;
+    width: 25%;
+    border: 1px solid #ececec;
+    background: #fff;
+    -webkit-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.10);
+    -moz-box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.10);
+    box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.10);
+    padding: 1em;
+}
+.hdnotizia{
+    text-align: right;
+    border-bottom: 1px solid #ececec;
+    color: #bdbdbd;
+}
+.text{
+     text-align: left;
+    line-height: 1.7em;
+}
+.main-info{
+    font-weight: bold;
+    margin-bottom: 2em;
+    
+}
+.rosso{
+    color:red!important;
+}
+.blu{
+    color: blue!important;
+}
 #cont{
     display: block;
     min-height: 100%;
@@ -38,7 +83,7 @@ h1{
     margin: 0 auto -50px;
 }
 #main_content{
-    background-color: #fff;
+    background-color: #f6f6f6;
     width: 90%;
     margin-top: -1em;
     height: auto;
@@ -46,4 +91,5 @@ h1{
     margin-left: auto;
     border-radius: 0px 0px 10px 10px;
     padding-bottom: 2em;
+    margin-bottom: 3em;
 }

@@ -14,7 +14,7 @@ body {
     margin: 1em auto;
     text-align: center;
     color: #1c2024;
-    background-color: #fff;
+    background-color: #f6f6f6;
     border: #1c2024 solid;
     width: 50%;
     font-size: 3em;
@@ -25,7 +25,7 @@ a:link, a:visited, a:active{
 }
 a:hover{
     text-decoration: none;
-    color: #fff;
+    color: #f6f6f6;
 }
 ::-webkit-scrollbar{
     background-color: #fff;
@@ -36,7 +36,7 @@ a:hover{
 }
 #main_content{
     border: #1c2024 solid;
-    background-color: #fff;
+    background-color: #f6f6f6;
     background-image: url("../img/ptrn.jpg");
     width: 70%;
     margin-top: -1em;
@@ -64,13 +64,13 @@ table{
     width: 80%;
 }
 th{
-    background-color: #fff;
+    background-color: #f6f6f6;
     border: #1c2024 solid;
     margin: 0;
     padding: .5em;
 }
 td{
-   background-color: #fff;
+   background-color: #f6f6f6;
     border: #1c2024 solid; 
     width: 50%;
     }

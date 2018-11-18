@@ -5,18 +5,9 @@ body {
     color: #1c2024;
     font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
     background: #8e141f!important;
-    width: 100%;
+    margin-left: 75px;
+    width: auto;
     height: 100%;
-}
-table{
-    margin: auto;
-}
-td{
-    padding: 5px 10px;
-    text-align: center;
-}
-th{
-    padding-top: 2em;
 }
 ::-webkit-scrollbar{
     background-color: #fff;
@@ -27,7 +18,7 @@ th{
 }
 #main_content{
     background-color: #f6f6f6;
-    width: 60%;
+    width: 80%;
     margin-top: -1em;
     padding-top: 2em;
     padding-bottom: 2em;
@@ -35,9 +26,6 @@ th{
     margin-right: auto;
     margin-left: auto;
     border-radius: 0px 0px 10px 10px;
-}
-.campo{
-    width: 160px;
 }
 #cont{
     display: block;

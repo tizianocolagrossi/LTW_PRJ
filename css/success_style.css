@@ -48,7 +48,7 @@ footer{
 }
 
 #main_page{
-    background-color: #fff;
+    background-color: #f6f6f6;
     width: 90%;
     margin-right: auto;
     margin-left: auto;
@@ -56,7 +56,7 @@ footer{
     border-radius: 10px 10px 10px 10px;
 }
 #main_content{
-    background-color: #fff;
+    background-color: #f6f6f6;
     width: 60%;
     margin-top: 0em;
     height: auto;
