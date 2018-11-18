@@ -19,3 +19,7 @@ Ho iniziato a implementare la validazione della scheda elettorale; dopo aver imp
 (TIZIANO)
 Ho aggiunto la pagina delle opzioni e iniziato a strutturare la pagina del profilo, devo capire bene come formattare bene le notizie, la barra ora è quasi completa apparte che manca la pagina del calendario e la scelta dei colori, appena finito tutto questo dovro ridare una letta a tutto il css e renderlo decente dal punto di vista dell' ordine, in modo tale anche di diminuire la ridondanza del codice. Mo stacco un po, esco mi faccio un po di birre e ci penso su!
 *bzz* Tiziano, chiudo *bzz*
+
+#########Giorno 5 (18/11/28)
+(TIZIANO)
+Sono stato tutto il giorno a implementare le notizie dopo ave tirato giu sette calendari dio è sceso e mi ha dato una mano facendomi fare quello che ora è la pagina di profilo. Non è venuta poi cosi male tenendo conto che anche riducendo la pagina le notizie si riducono do dimensione e vanno accapo riallineandosi se lo schermo diventa troppo piccolo, inoltre ho iniziato a dare uo sguardo per il calendario ho trovato parecchie idee carucce, che probabilmente ci faranno smadonnare non poco, pero daje stamo anna bene!
