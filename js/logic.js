@@ -7,7 +7,7 @@
 */
 
 
-// formato informazione:   [CID, pw, e-mail, nome, cognome, CF, municipio]
+//     Formato informazione:[ CID, pw, e-mail, nome, cognome, CF, municipio ]
 var utente1 = new Array("AX1234567", "utente1", "dicampi@gmail.com", "Davide", "Di Campi", "DCMDDB97B04H501R", "5")
 var utente2 = new Array("CX12345AB", "utente2", "colagrossi@gmail.com", "Tiziano", "Colagrossi", "CLGTZN97L29L182J", "1") 
 var utente3;
@@ -141,6 +141,7 @@ function register(){
 						if(password == confirm_pw){
 							utente3 = new Array(ID_value, password, email, nome, cognome, CF_value, municipio);
 							addUser(utente3);  // <------- non è permanente, diocà
+							console.log(db);
 							console.log("Succesfully registered");
 							window.location.href=("reg_success.html");						
 						}else error("Le password inserite non sono uguali");
