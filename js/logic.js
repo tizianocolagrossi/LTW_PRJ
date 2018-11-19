@@ -1,11 +1,36 @@
 /*
 **=
+**===   /---------------\
+**=====     Database
+**===   \---------------/
+**=
+*/
+
+
+//     Formato informazione:[ CID, pw, e-mail, nome, cognome, CF, municipio ]
+var utente1 = new Array("AX1234567", "utente1", "dicampi@gmail.com", "Davide", "Di Campi", "DCMDDB97B04H501R", "5")
+var utente2 = new Array("CX12345AB", "utente2", "colagrossi@gmail.com", "Tiziano", "Colagrossi", "CLGTZN97L29L182J", "1") 
+var utente3;
+
+var db = new Array(utente1, utente2);
+
+function addEntry(CID, pw, email, nome, cognome, CF, mun){
+	var new_entry = new Array(CID, pw, email, nome, cognome, CF, mun);
+	db[db.length] = new_entry;
+}
+
+function addUser(user){
+	db[db.length] = user;
+}
+
+
+/*
+**=
 **===   /----------------\
 **=====  Global variables
 **===   \----------------/
 **=
 */
-
 
 var ID_reg_expression = /[A-Z][A-Z]\d{7}|C[A-Z]\d{5}[A-Z][A-Z]/;
 var Email_reg_expression = /[A-Z||a-z||0-9]+@[A-Z||a-z]+\.[A-Z||a-z]/;
@@ -35,9 +60,15 @@ function validateID(ID_value){
 
 function validatePW(ID_value, PW_value){
 	if(PW_value == "") return false;
-	//dato il codice della carta d'identità (precedentemente controllato), controllare da file se la password è associata a quell'ID
-	console.log("---TODO password---")
-	return true;
+	for(i=0; i<db.length; i++){
+		if(db[i][0] == ID_value){
+			if(db[i][1] == PW_value) return 1;
+			else{
+				return -2;
+			}
+		}
+	}
+	return -1;
 }
 
 function validateEmail(Email_value){
@@ -72,13 +103,23 @@ function log_in(){
 	var ID_value = document.getElementsByName('name')[0].value;
 	var PW_value = document.getElementsByName('password')[0].value;
 	if(validateID(ID_value)){
-		if(validatePW(ID_value, PW_value)){
-			console.log("Succesfully logged");
-			error("---TODO login---");
-			//window.location("url-pagina-loggata");
-			
-		}else error("Password non valida");
+		var log_ret = validatePW(ID_value, PW_value);
+		switch(log_ret){
+			case 1: 
+				console.log("Succesfully logged");
+				window.location.href = "profilo.html";
+				break;
+			case -1:
+				error("Carta d'Identità non registrata");
+				break;
+			case -2:
+				error("Password sbagliata");
+				break;
+			default:
+				error("Errore irreparabile del Kernel");
+		}
 	}else error("Carta d'Identità non valida");
+		console.log(db);
 }
 
 function register(){
@@ -98,8 +139,10 @@ function register(){
 				if(validateCF(CF_value)){
 					if(password != ""){
 						if(password == confirm_pw){
+							utente3 = new Array(ID_value, password, email, nome, cognome, CF_value, municipio);
+							addUser(utente3);  // <------- non è permanente, diocà
+							console.log(db);
 							console.log("Succesfully registered");
-							console.log("---TODO salvataggio dei dati---");
 							window.location.href=("reg_success.html");						
 						}else error("Le password inserite non sono uguali");
 					}else error("Password non valida")
