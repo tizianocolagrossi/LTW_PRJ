@@ -86,6 +86,9 @@ body {
     box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.10);
     border: 1px solid #ececec;
 }
+table{
+    background: #fcc;
+}
 ::-webkit-scrollbar{
     background-color: #F6F6F6;
     width: 5px;
