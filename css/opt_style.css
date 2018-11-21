@@ -13,10 +13,13 @@ table{
 }
 td{
     padding: 5px 10px;
-    text-align: center;
+    text-align: left;
 }
 th{
     padding-top: 2em;
+}
+.btn{
+    text-align: center !important;
 }
 ::-webkit-scrollbar{
     background-color: #fff;
