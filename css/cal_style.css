@@ -92,9 +92,10 @@ body {
 }
 table{
     width: 90%;
-    background: #fcc;
     margin-left: auto;
     margin-right: auto;
+    border-collapse: collapse;
+    border-spacing: 0;
 }
 th{
     width: 13%;
@@ -104,9 +105,19 @@ th{
 }
 td{
     height: 70px;
-    border: 1px solid #fff;
+    border: 3px solid #f6f6f6;
 }
-
+td:hover{
+    background: #fff;
+    border-radius: 15px;
+}
+.no-mo{
+    color: #A3A3A3;
+    
+}
+.no-mo:hover{
+    background:  rgba(255,255,255,0.00); 
+}
 .ar-bk{
     display: inline-block;
     background-image: url("../icons/md-arrow-round-back.svg");
