@@ -31,4 +31,5 @@ Solo bestemmie. Sto cercando di creare un database da javascript, ma non è perm
 MANNAGGIA LA MADONNA ZIO 
 #########Giorno 7 (20/11/18)
 Per ora la giornata non va male ho quasi finito di sistemare la sezione agenda con gli eventi, si lo so, gli eventi sono centrati a merda altro che luca giurato... pero va be pe mo va mooolto bene, ho iniziato a scrivere per il calendario creando una tabella che devo ancora formattare bene pero per ora mi sto un po fermo, riprendo il lavoro sto pomeriggio. 
-	
+#########Giorno 8 (21/11/18)
+Oggi una giornata decente, ho finito di fare il calendario e ho iniziato ad imèostare le classi e gli identificatori per ogni tabella che poi davide usera sul js per modificare il mese nella tabella e allineare i giorni. Stramanente oggi nessuna smadonnata. 
