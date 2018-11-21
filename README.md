@@ -1,10 +1,7 @@
 # Progetto Linguaggi e tecnologie web
 
- ##portale per votare online
- 
-TODO:
+Oggetto: portale per votare online
 
-pagina: registrazione eseguita con successo
-pagina: home page una volta loggato 
-pagina: recupero password eseguito con successo
+
+ 
 
