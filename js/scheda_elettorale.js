@@ -78,10 +78,9 @@ function inviaVoto(){
 	var scheda_valida = validateScheda();
 	if(scheda_valida){
 		console.log("scheda valida");
-		// ??window.location.href = "url-recap-voto";
 		if(window.confirm(recap_voto)){
 			console.log("voto confermato");
-			//window.location.href = "url-voto-success";
+			window.location.href = "voto_success.html";
 		}
 		else console.log("voto non confermato");
 	}

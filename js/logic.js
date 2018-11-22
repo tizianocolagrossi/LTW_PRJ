@@ -255,6 +255,11 @@ function recoverPw(){
 	}else error("Carta d'Identità non valida");
 }
 
+function log_out(){
+	localStorage.setItem('logged_user', JSON.stringify(null));
+	window.location.href = "index.html";
+}
+
 function insertSecretCode(){
 	var secret_code = document.getElementsByName("code")[0].value;
 	if(validateSecretCode(secret_code)){
