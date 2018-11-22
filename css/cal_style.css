@@ -1,14 +1,4 @@
 /* CSS Document */
-html{height: 100%;}
-body {
-    margin: 0px;
-    color: #1c2024;
-    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
-    background: #8e141f!important;
-    margin-left: 75px;
-    width: auto;
-    height: 100%;
-}
 .center{
     text-align: center;
 }
@@ -167,31 +157,11 @@ td:hover{
     width: 32px;
     vertical-align: top;
 }
-::-webkit-scrollbar{
-    background-color: #F6F6F6;
-    width: 5px;
-}
-::-webkit-scrollbar-thumb{
-    background-color: #1c2024;
-}
+
 #main_content{
-    background-color: #f6f6f6;
     width: 80%;
     margin-top: -1em;
     padding-top: 2em;
     padding-bottom: 2em;
-    height: auto;
-    margin-right: auto;
-    margin-left: auto;
-    border-radius: 0px 0px 10px 10px;
 }
-#cont{
-    display: block;
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 auto -50px;
-}
-#push{
-    height: 100px;
-}
+

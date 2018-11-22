@@ -1,14 +1,6 @@
 /* CSS Document */
-html{height: 100%;}
-body {
-    margin: 0px;
-    color: #1c2024;
-    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
-    background: #FFBEB5;
-    background: #74D8C6!important;
-    width: auto;
-    height: 100%;
-    padding-left: 75px;
+body{
+    background-color: #74d8c6;
 }
 #ht{
     margin: 1em auto;
@@ -19,44 +11,22 @@ body {
     width: 50%;
     font-size: 3em;
 }
-a:link, a:visited, a:active{
-    text-decoration: none;
-    color: #ffb300 ;
-}
 a:hover{
     text-decoration: none;
     color: #f6f6f6;
 }
-::-webkit-scrollbar{
-    background-color: #fff;
-    width: 5px;
-}
-::-webkit-scrollbar-thumb{
-    background-color: #1c2024;
-}
+
 #main_content{
     border: #1c2024 solid;
-    background-color: #f6f6f6;
     background-image: url("../img/ptrn.jpg");
     width: 70%;
     margin-top: -1em;
-    height: auto;
-    margin-right: auto;
-    margin-left: auto;
-    border-radius: 0px 0px 10px 10px;
     padding-bottom: 2em;
 }
 
 
 p{
     padding: 0em 5em 3em;
-}
-
-footer>img{
-    position: absolute;
-    width: 100%;
-    bottom: 0;
-    margin: 0px 0px -5px;
 }
 
 table{
@@ -105,14 +75,4 @@ h1,h4{
     padding: .5em 3em;
     text-align: center;
     
-}
-#cont{
-    display: block;
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 auto -50px;
-}
-#push{
-    height: 100px;
 }

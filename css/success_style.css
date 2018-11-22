@@ -1,29 +1,9 @@
 /* CSS Document */
-html{height: 100%;}
-body {
-    margin: 0;
-    color: #1c2024;
-    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
-    background: #8e141f!important;
-    width: 100%;
-    height: 100%;
-}
-a:link, a:visited, a:active{
-    text-decoration: none;
-    color: #ffb300 ;
-}
+
 a:hover{
     text-decoration: none;
     color: #8e141f;
 }
-::-webkit-scrollbar{
-    background-color: #fff;
-    width: 5px;
-}
-::-webkit-scrollbar-thumb{
-    background-color: #1c2024;
-}
-
 h3{
     margin-top: 2em;
 	text-align: center;
@@ -33,9 +13,6 @@ article{
     font-size: 1.4em;
 }
 
-/*p{
-	font-size: 1em;
-}*/
 
 footer{
     position: absolute;
@@ -56,35 +33,6 @@ footer{
     border-radius: 10px 10px 10px 10px;
 }
 #main_content{
-    background-color: #f6f6f6;
     width: 60%;
     margin-top: 0em;
-    height: auto;
-    margin-right: auto;
-    margin-left: auto;
-    border-radius: 0px 0px 10px 10px;
-}
-nav{
-    background-color: #1c2024;
-    padding-top: 15px;
-    padding-bottom: 10px;
-    
-}
-nav>ul{
-    display: inline;
-    text-align: center;
-    margin:  5px 0px;
-}
-nav>ul>li{
-    list-style-type: none;
-}
-#cont{
-    display: block;
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 auto -100px;
-}
-#push{
-    height: 50px;
 }

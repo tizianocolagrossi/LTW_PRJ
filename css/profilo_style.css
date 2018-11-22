@@ -1,21 +1,4 @@
 /*FILE CSS*/
-html{height: 100%;}
-body{
-    margin: 0px;
-    color: #1c2024;
-    font-family: Gotham, "Helvetica Neue", Helvetica, Arial, "sans-serif";
-    background: #8e141f;
-    width: auto;
-    height: 100%;
-    padding-left: 75px;
-}
-::-webkit-scrollbar{
-    background-color: #fff;
-    width: 5px;
-}
-::-webkit-scrollbar-thumb{
-    background-color: #1c2024;
-}
 header{
     padding: 1em;
 }
@@ -32,8 +15,6 @@ figcaption{
 }
 h1{
     margin-top: 2em;
-    font-size: 3em;
-    text-align: center;
 }
 .hub_notizie{
     margin: 2em auto 0;
@@ -75,21 +56,9 @@ h1{
 .blu{
     color: blue!important;
 }
-#cont{
-    display: block;
-    min-height: 100%;
-    height: auto !important;
-    height: 100%;
-    margin: 0 auto -50px;
-}
 #main_content{
-    background-color: #f6f6f6;
     width: 90%;
     margin-top: -1em;
-    height: auto;
-    margin-right: auto;
-    margin-left: auto;
-    border-radius: 0px 0px 10px 10px;
     padding-bottom: 2em;
     margin-bottom: 3em;
 }
