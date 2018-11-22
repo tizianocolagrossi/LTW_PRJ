@@ -17,15 +17,19 @@ var utente2 = new Array("CX12345AB", "utente2", "colagrossi@gmail.com", "Tiziano
 
 function inizializeDB(){
 	db = new Array(utente1, utente2);
-	localStorage.setItem('db', JSON.stringify(db));
+	refreshDB();
 }
 
 function refreshDB(localDb){
 	localStorage.setItem('db', JSON.stringify(localDb));
 }
 
+function getDB(){
+	return JSON.parse(localStorage.getItem('db'));
+}
+
 function containsDB(ID_value){
-	var localDb = JSON.parse(localStorage.getItem('db'));
+	var localDb = getDB();
 	for(i=0; i<localDb.length; i++){
 		if(localDb[i][0] == ID_value) return true;
 	}
@@ -40,7 +44,7 @@ function addEntry(CID, pw, email, nome, cognome, CF, mun){
 }
 
 function addUser(user){
-	var localDb = JSON.parse(localStorage.getItem('db'));
+	var localDb = getDB();
 	if(localDb == null) {
 		inizializeDB();
 		addUser(user);
@@ -52,7 +56,7 @@ function addUser(user){
 }
 
 function modifyPassword(ID_value, new_pw){
-	var localDb = JSON.parse(localStorage.getItem('db'));
+	var localDb = getDB();
 	for(i=0; i<localDb.length; i++){
 		if(localDb[i][0] == ID_value){
 			localDb[i][1] = new_pw;
@@ -63,7 +67,7 @@ function modifyPassword(ID_value, new_pw){
 }
 
 function modifyEmail(ID_value, new_email){
-	var localDb = JSON.parse(localStorage.getItem('db'));
+	var localDb = getDB();
 	for(i=0; i<localDb.length; i++){
 		if(localDb[i][0] == ID_value){
 			localDb[i][2] = new_email;
@@ -189,8 +193,9 @@ function register(){
 					if(password != ""){
 						if(password == confirm_pw){
 							if(!containsDB(ID_value)){
-								utente3 = new Array(ID_value, password, email, nome, cognome, CF_value, municipio);
-								addUser(utente3);  
+								var new_user = new Array(ID_value, password, email, nome, cognome, CF_value, municipio);
+								addUser(new_user);
+								localStorage.setItem('logged_user', JSON.stringify(new_user));  
 								console.log("Succesfully registered");
 								window.location.href=("reg_success.html");
 							}else error("Carta d'Identità già registrata");						
