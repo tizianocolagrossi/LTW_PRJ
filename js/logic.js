@@ -35,8 +35,14 @@ function addEntry(CID, pw, email, nome, cognome, CF, mun){
 
 function addUser(user){
 	var localDb = JSON.parse(localStorage.getItem('db'));
-	localDb[localDb.length] = user;
-	localStorage.setItem('db', JSON.stringify(localDb));
+	if(localDb == null) {
+		inizializeDB();
+		addUser(user);
+	}
+	else{
+		localDb[localDb.length] = user;
+		localStorage.setItem('db', JSON.stringify(localDb));
+	}
 }
 
 
