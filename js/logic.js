@@ -12,13 +12,6 @@
 var utente1 = new Array("AX1234567", "utente1", "dicampi@gmail.com", "Davide", "Di Campi", "DCMDDB97B04H501R", "5")
 var utente2 = new Array("CX12345AB", "utente2", "colagrossi@gmail.com", "Tiziano", "Colagrossi", "CLGTZN97L29L182J", "1") 
 
-/*
-//     Inizializzazione db in localstorage
-
-var retrievedObject = JSON.parse(localStorage.getItem('db'));
-console.log('retrievedObject: ', retrievedObject);
-
-*/
 
 //     Funzioni ausiliarie
 
@@ -27,11 +20,23 @@ function inizializeDB(){
 	localStorage.setItem('db', JSON.stringify(db));
 }
 
+function refreshDB(localDb){
+	localStorage.setItem('db', JSON.stringify(localDb));
+}
+
+function containsDB(ID_value){
+	var localDb = JSON.parse(localStorage.getItem('db'));
+	for(i=0; i<localDb.length; i++){
+		if(localDb[i][0] == ID_value) return true;
+	}
+	return false;
+}
+
 function addEntry(CID, pw, email, nome, cognome, CF, mun){
 	var new_entry = new Array(CID, pw, email, nome, cognome, CF, mun);
 	var localDb = JSON.parse(localStorage.getItem('db'));
 	localDb[localDb.length] = new_entry;
-	localStorage.setItem('db', JSON.stringify(localDb));
+	refreshDB(localDb);
 }
 
 function addUser(user){
@@ -42,10 +47,31 @@ function addUser(user){
 	}
 	else{
 		localDb[localDb.length] = user;
-		localStorage.setItem('db', JSON.stringify(localDb));
+		refreshDB(localDb);
 	}
 }
 
+function modifyPassword(ID_value, new_pw){
+	var localDb = JSON.parse(localStorage.getItem('db'));
+	for(i=0; i<localDb.length; i++){
+		if(localDb[i][0] == ID_value){
+			localDb[i][1] = new_pw;
+			break;
+		}
+	}
+	refreshDB(localDb);
+}
+
+function modifyEmail(ID_value, new_email){
+	var localDb = JSON.parse(localStorage.getItem('db'));
+	for(i=0; i<localDb.length; i++){
+		if(localDb[i][0] == ID_value){
+			localDb[i][2] = new_email;
+			break;
+		}
+	}
+	refreshDB(localDb);
+}
 
 /*
 **=
@@ -162,10 +188,12 @@ function register(){
 				if(validateCF(CF_value)){
 					if(password != ""){
 						if(password == confirm_pw){
-							utente3 = new Array(ID_value, password, email, nome, cognome, CF_value, municipio);
-							addUser(utente3);  // <------- non è permanente, diocà
-							console.log("Succesfully registered");
-							window.location.href=("reg_success.html");						
+							if(!containsDB(ID_value)){
+								utente3 = new Array(ID_value, password, email, nome, cognome, CF_value, municipio);
+								addUser(utente3);  
+								console.log("Succesfully registered");
+								window.location.href=("reg_success.html");
+							}else error("Carta d'Identità già registrata");						
 						}else error("Le password inserite non sono uguali");
 					}else error("Password non valida")
 				}else error("Codice fiscale non valido");
