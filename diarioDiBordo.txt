@@ -1,8 +1,10 @@
 #########Giorno 1 (14/11/18):
 Ancora non avevamo pensato a un diario di bordo
 
+
 #########Giorno 2 (15/11/28):
 Abbiamo pensato ad un diario di bordo, ma niente, non l'abbiamo scritto
+
 	
 #########Giorno 3 (16/11/18):
 (DAVIDE)
@@ -13,6 +15,7 @@ Diario di bordo,
 sono le 02.07 di sabato 17 Novembre 2018, ho appena finito di aggiungere una cazzo di barra laterale che alla fine è stato meno peggio che centrare le tabelle della scheda elettorale. Alla fine il lavoro procede abbastanza linearmente, manca da aggiungere 2 pagine principali, il calendario e la pagina delle opzioni e bisogna finire la pagina del profilo. poi bisognerà aggiungere la logica dietro e aggiungere "zucchero".
 *bzz* Tiziano, chiudo *bzz*
 
+
 #########Giorno 4 (17/11/18)
 (DAVIDE)
 Ho iniziato a implementare la validazione della scheda elettorale; dopo aver implementato una soluzione becera ma funzionante, ho capito che per farne una decente ci vorrà un attimo di coordinazione tra js, css e html. Che palle. Vado a cena.
@@ -20,23 +23,33 @@ Ho iniziato a implementare la validazione della scheda elettorale; dopo aver imp
 Ho aggiunto la pagina delle opzioni e iniziato a strutturare la pagina del profilo, devo capire bene come formattare bene le notizie, la barra ora è quasi completa apparte che manca la pagina del calendario e la scelta dei colori, appena finito tutto questo dovro ridare una letta a tutto il css e renderlo decente dal punto di vista dell' ordine, in modo tale anche di diminuire la ridondanza del codice. Mo stacco un po, esco mi faccio un po di birre e ci penso su!
 *bzz* Tiziano, chiudo *bzz*
 
+
 #########Giorno 5 (18/11/18)
 (TIZIANO)
 Sono stato tutto il giorno a implementare le notizie dopo ave tirato giu sette calendari dio è sceso e mi ha dato una mano facendomi fare quello che ora è la pagina di profilo. Non è venuta poi cosi male tenendo conto che anche riducendo la pagina le notizie si riducono do dimensione e vanno accapo riallineandosi se lo schermo diventa troppo piccolo, inoltre ho iniziato a dare uo sguardo per il calendario ho trovato parecchie idee carucce, che probabilmente ci faranno smadonnare non poco, pero daje stamo anna bene!
+
 
 #########Giorno 6 (19/11/18)
 (DAVIDE)
 Solo bestemmie. Sto cercando di creare un database da javascript, ma non è permanente manco per il cazzo, non posso aggiungere nessuna entry permanente. Sentire bestemmiare Tiziano accanto a me è comunque confortante.
 (TIZIANO)
 MANNAGGIA LA MADONNA ZIO 
+
+
 #########Giorno 7 (20/11/18)
 Per ora la giornata non va male ho quasi finito di sistemare la sezione agenda con gli eventi, si lo so, gli eventi sono centrati a merda altro che luca giurato... pero va be pe mo va mooolto bene, ho iniziato a scrivere per il calendario creando una tabella che devo ancora formattare bene pero per ora mi sto un po fermo, riprendo il lavoro sto pomeriggio. 
+
+
 #########Giorno 8 (21/11/18)
 (TIZIANO)
 Oggi una giornata decente, ho finito di fare il calendario e ho iniziato ad imèostare le classi e gli identificatori per ogni tabella che poi davide usera sul js per modificare il mese nella tabella e allineare i giorni. Stramanente oggi nessuna smadonnata.
 Aggiornamento delle 23:36 appena finito di sistemare meglio l'aspetto del calendario. Quello che prima era una bozza ora è un po piu rifinito. Manca ancora da rivedere la palette del sito, sopratutto della bara laterale che non mi convince molto la sfimatura non so, forse mi conviene eliminarla o cercare delle sfumature particolari che si addicono al sito. Per il resto non male. Potrei dire che con oggi ho finito, ma non è vero, perche mancano le pagine per le notizie, ora è da vedere se mostrarle come popup in css o creare una pagina diversa, ora ci penso un po su e inizio a fare degli schizzi. Ah ora devo fare una rottura di scatole, devo stampare tutto il css e vedere se posso renderlo piu elegante riducendo le ridondanze ora inizio a stampare tutti i css e domani nelle ora di pausa tra Architetture dei calcolatori e economia mi metto in biblioteca a cercare di sistemare il tutto. 
-Oggo Davide mi ha abbandonato ma lo perdono va... avrà molto per bestemmiare nei prossimi giorni! 
+Oggi Davide mi ha abbandonato ma lo perdono va... avrà molto per bestemmiare nei prossimi giorni!
+
+ 
 #########Giorno 9 (22/11/18)
 (TIZIANO)
 Ho finalmente finito di rudurre il css ho aggiunto un file globale per i css che si ripetevano ora è un po piu leggibile rispetto a prima, non è il top pero ci accontantiamo ora mi rimangono i popup per le notizie. Mo dopo mentre ci sta economia mi invento qualcosa.
- 
+
+
+#########Giorno 10 (23/11/18)

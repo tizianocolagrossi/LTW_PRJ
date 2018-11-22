@@ -8,19 +8,34 @@
 
 
 //     Formato informazione:[ CID, pw, e-mail, nome, cognome, CF, municipio ]
+
 var utente1 = new Array("AX1234567", "utente1", "dicampi@gmail.com", "Davide", "Di Campi", "DCMDDB97B04H501R", "5")
 var utente2 = new Array("CX12345AB", "utente2", "colagrossi@gmail.com", "Tiziano", "Colagrossi", "CLGTZN97L29L182J", "1") 
-var utente3;
 
-var db = new Array(utente1, utente2);
+
+//     Inizializzazione db in localstorage
+
+var retrievedObject = JSON.parse(localStorage.getItem('db'));
+console.log('retrievedObject: ', retrievedObject);
+
+
+//     Funzioni ausiliarie
+
+function inizializeDB(){
+	db = new Array(utente1, utente2);
+}
 
 function addEntry(CID, pw, email, nome, cognome, CF, mun){
 	var new_entry = new Array(CID, pw, email, nome, cognome, CF, mun);
-	db[db.length] = new_entry;
+	var localDb = JSON.parse(localStorage.getItem('db'));
+	localDb[localDb.length] = new_entry;
+	localStorage.setItem('db', JSON.stringify(localDb));
 }
 
 function addUser(user){
-	db[db.length] = user;
+	var localDb = JSON.parse(localStorage.getItem('db'));
+	localDb[localDb.length] = user;
+	localStorage.setItem('db', JSON.stringify(localDb));
 }
 
 
@@ -32,15 +47,10 @@ function addUser(user){
 **=
 */
 
+
 var ID_reg_expression = /[A-Z][A-Z]\d{7}|C[A-Z]\d{5}[A-Z][A-Z]/;
 var Email_reg_expression = /[A-Z||a-z||0-9]+@[A-Z||a-z]+\.[A-Z||a-z]/;
 var CF_reg_expression = /[A-Z]{6}\d{2}[A-Z]\d{2}[A-Z]\d{3}[A-Z]/;
-
-/*function inizializeDB(){
-	var file = new File([txt], "database.txt", {type: "application/octet-stream"});
-	var blobUrl = (URL || webkitURL).createObjectURL(file);
-}
-*/
 
 
 /*
@@ -141,7 +151,6 @@ function register(){
 						if(password == confirm_pw){
 							utente3 = new Array(ID_value, password, email, nome, cognome, CF_value, municipio);
 							addUser(utente3);  // <------- non è permanente, diocà
-							console.log(db);
 							console.log("Succesfully registered");
 							window.location.href=("reg_success.html");						
 						}else error("Le password inserite non sono uguali");
