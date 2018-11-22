@@ -20,12 +20,12 @@ function inizializeDB(){
 	refreshDB();
 }
 
-function refreshDB(localDb){
-	localStorage.setItem('db', JSON.stringify(localDb));
-}
-
 function getDB(){
 	return JSON.parse(localStorage.getItem('db'));
+}
+
+function refreshDB(localDb){
+	localStorage.setItem('db', JSON.stringify(localDb));
 }
 
 function containsDB(ID_value){
