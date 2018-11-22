@@ -1,8 +1,8 @@
 /*
 **=
-**===   /---------------\
+**===   /--------------\
 **=====     Database
-**===   \---------------/
+**===   \--------------/
 **=
 */
 
@@ -63,27 +63,58 @@ function getUser(ID_value){
 	return null;
 }
 
-function modifyPassword(ID_value, new_pw){
-	var localDb = getDB();
-	for(i=0; i<localDb.length; i++){
-		if(localDb[i][0] == ID_value){
-			localDb[i][1] = new_pw;
-			break;
-		}
-	}
-	refreshDB(localDb);
+function refreshLoggedUser(user){
+	localStorage.setItem('logged_user', JSON.stringify(user));
 }
 
-function modifyEmail(ID_value, new_email){
+function modifyPassword(){
 	var localDb = getDB();
-	for(i=0; i<localDb.length; i++){
-		if(localDb[i][0] == ID_value){
-			localDb[i][2] = new_email;
-			break;
-		}
-	}
+	var current_user = JSON.parse(localStorage.getItem("logged_user"));
+	var old_pw = document.getElementById("old_pw").value;
+	var new_pw = document.getElementById("new_pw").value;
+	var confirm_pw = document.getElementById("confirm_pw").value;
+	
+	if(validatePW(current_user[0], old_pw)){
+		if(new_pw == confirm_pw){
+			for(i=0; i<localDb.length; i++){
+				if(localDb[i][0] == current_user[0]){
+					current_user[1] = new_pw;
+					localDb[i][1] = new_pw;
+					break;
+				}
+			}
+		}else error("Le nuove password inserite non corrispondono");
+	}else error("Password non corretta");
+	
+	refreshLoggedUser(current_user);
 	refreshDB(localDb);
+	console.log(getDB());
+	window.location.href = "change_pw_success.html";
 }
+
+function modifyEmail(){
+	var localDb = getDB();
+	var current_user = JSON.parse(localStorage.getItem("logged_user"));
+	var pw = document.getElementById("e-pw").value;
+	var new_email = document.getElementById("email").value;
+	
+	if(validatePW(current_user[0], pw)){
+		for(i=0; i<localDb.length; i++){
+			if(localDb[i][0] == current_user[0]){
+				current_user[2] = new_email;
+				localDb[i][2] = new_email;
+				break;
+			}
+		}
+	}else error("Password non corretta");
+	
+	refreshLoggedUser(current_user);
+	localDb[3] = "";
+	refreshDB(localDb);
+	console.log(getDB());
+	window.location.href = "change_email_success.html";
+}
+
 
 /*
 **=
@@ -174,7 +205,7 @@ function log_in(){
 				error("Carta d'Identità non registrata");
 				break;
 			case -2:
-				error("Password sbagliata");
+				error("Password non corretta");
 				break;
 			case -3:
 				error("La password non può essere vuota");
@@ -208,7 +239,7 @@ function register(){
 								console.log("Succesfully registered");
 								window.location.href=("reg_success.html");
 							}else error("Carta d'Identità già registrata");						
-						}else error("Le password inserite non sono uguali");
+						}else error("Le password inserite non corrispondono");
 					}else error("Password non valida")
 				}else error("Codice fiscale non valido");
 			}else error("Carta d'Identità non valida");

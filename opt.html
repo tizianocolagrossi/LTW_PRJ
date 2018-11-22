@@ -35,31 +35,31 @@
             <tr>   
                 <th colspan="3">Cambia Password</th>
             </tr>
-                <td>Vecchia pw</td><td><input class="campo" type="password" name="old_pw" maxlength="20" required></td>
+                <td>Vecchia password</td><td><input class="campo" id="old_pw" type="password" name="old_pw" maxlength="20" required></td>
             <tr>
             </tr>
-                <td>Nuova</td><td><input class="campo" type="password" name="new_1_pw" maxlength="20" required></td>
+                <td>Nuova password</td><td><input class="campo" id="new_pw" type="password" name="new_1_pw" maxlength="20" required></td>
             <tr>
             </tr>
             <tr>
-                <td>Ripeti</td><td><input class="campo" type="password" name="new_2_pw" maxlength="20" required></td>
+                <td>Conferma password</td><td><input class="campo" id="confirm_pw" type="password" name="new_2_pw" maxlength="20" required></td>
             </tr>
             <tr>
-                <td colspan="2" class="btn"><input type="button" value="Salva"></td>
+                <td colspan="2" class="btn"><input type="button" value="Salva" onclick="modifyPassword()"></td>
             </tr>
             </form>
             <form method="post" action="">
             <tr>
                 <th colspan="2">Cambia E-mail</th>
             </tr>
-                <td>Password</td><td><input type="password" name="pw" maxlength="20" required></td>
+                <td>Password</td><td><input type="password" id="e-pw" name="pw" maxlength="20" required></td>
             <tr>
             </tr>
             <tr>
-                <td>Nuova E-mail</td><td><input type="email" required></td>
+                <td>Nuova E-mail</td><td><input type="email" id="email" required></td>
             </tr>
             <tr>
-                <td colspan="2" class="btn"><input type="button" value="Salva"></td>
+                <td colspan="2" class="btn"><input type="button" value="Salva" onclick="modifyEmail()"></td>
             </tr>
             </form>
         </table>
