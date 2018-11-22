@@ -109,7 +109,6 @@ function modifyEmail(){
 	}else error("Password non corretta");
 	
 	refreshLoggedUser(current_user);
-	localDb[3] = "";
 	refreshDB(localDb);
 	console.log(getDB());
 	window.location.href = "change_email_success.html";
