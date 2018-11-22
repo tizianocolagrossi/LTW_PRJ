@@ -55,6 +55,14 @@ function addUser(user){
 	}
 }
 
+function getUser(ID_value){
+	var localDb = getDB();
+	for(i=0; i<localDb.length; i++){
+		if(localDb[i][0] == ID_value) return localDb[i];
+	}
+	return null;
+}
+
 function modifyPassword(ID_value, new_pw){
 	var localDb = getDB();
 	for(i=0; i<localDb.length; i++){
@@ -157,6 +165,8 @@ function log_in(){
 		var log_ret = validatePW(ID_value, PW_value);
 		switch(log_ret){
 			case 1: 
+				var current_user = getUser(ID_value);
+				localStorage.setItem('logged_user', JSON.stringify(current_user)); 
 				console.log("Succesfully logged");
 				window.location.href = "profilo.html";
 				break;
@@ -194,8 +204,7 @@ function register(){
 						if(password == confirm_pw){
 							if(!containsDB(ID_value)){
 								var new_user = new Array(ID_value, password, email, nome, cognome, CF_value, municipio);
-								addUser(new_user);
-								localStorage.setItem('logged_user', JSON.stringify(new_user));  
+								addUser(new_user); 
 								console.log("Succesfully registered");
 								window.location.href=("reg_success.html");
 							}else error("Carta d'Identità già registrata");						

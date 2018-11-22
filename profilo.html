@@ -30,8 +30,16 @@
             <header>
                 <img src="img/256px-Default_profile_picture.jpg">
                 <figcaption>
-                    <h1>Nome Cognome</h1>
-                    <h2>ID: <script>JSON.parse(localStorage.getItem('logged_user))[0]</script></h2><h2>MUNICIPIO: XX</h2>
+                    <h1 id="Nome"><script>document.getElementById('Nome').innerHTML=
+                    			JSON.parse(localStorage.getItem('logged_user'))[3] + " " +
+                    			JSON.parse(localStorage.getItem('logged_user'))[4]</script>
+                    </h1>
+                    <h2 id="CID"><script>document.getElementById('CID').innerHTML=
+                    			"ID: " + JSON.parse(localStorage.getItem('logged_user'))[0]</script>
+                    </h2>
+                    <h2 id="Mun"><script>document.getElementById('Mun').innerHTML=
+                    			"MUNICIPIO: " + JSON.parse(localStorage.getItem('logged_user'))[6]</script>
+                    </h2>
                 </figcaption>
             </header>
                 <h1>News</h1>
