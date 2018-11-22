@@ -53,3 +53,6 @@ Ho finalmente finito di rudurre il css ho aggiunto un file globale per i css che
 
 
 #########Giorno 10 (23/11/18)
+(DAVIDE)
+Si torna in azione. Ho implementato il database in locale, scritto le funzioni di gestione e collegato il tutto alle funzioni precedentemente esistenti. Sto finendo l'implementazione del profilo utente una volta loggato, in modo che prenda e visualizzi i dati del solo utente che ha effettuato l'accesso. Il calendario per ora sta bene dove sta :)
+
