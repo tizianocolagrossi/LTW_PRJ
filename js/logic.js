@@ -12,12 +12,13 @@
 var utente1 = new Array("AX1234567", "utente1", "dicampi@gmail.com", "Davide", "Di Campi", "DCMDDB97B04H501R", "5")
 var utente2 = new Array("CX12345AB", "utente2", "colagrossi@gmail.com", "Tiziano", "Colagrossi", "CLGTZN97L29L182J", "1") 
 
-
+/*
 //     Inizializzazione db in localstorage
 
 var retrievedObject = JSON.parse(localStorage.getItem('db'));
 console.log('retrievedObject: ', retrievedObject);
 
+*/
 
 //     Funzioni ausiliarie
 
@@ -69,7 +70,9 @@ function validateID(ID_value){
 }
 
 function validatePW(ID_value, PW_value){
-	if(PW_value == "") return false;
+	if(PW_value == "") return -3;
+	var db = JSON.parse(localStorage.getItem("db"));
+	
 	for(i=0; i<db.length; i++){
 		if(db[i][0] == ID_value){
 			if(db[i][1] == PW_value) return 1;
@@ -95,6 +98,7 @@ function validateCF(CF_value){
 
 function validateSecretCode(secret_code){
 	//controllo del codice da implementare
+	console.log("----TODO codice segreto----");
 	return (secret_code != "");
 }
 
@@ -125,11 +129,13 @@ function log_in(){
 			case -2:
 				error("Password sbagliata");
 				break;
+			case -3:
+				error("La password non può essere vuota");
+				break;
 			default:
 				error("Errore irreparabile del Kernel");
 		}
 	}else error("Carta d'Identità non valida");
-		console.log(db);
 }
 
 function register(){
