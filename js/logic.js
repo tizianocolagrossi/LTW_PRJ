@@ -24,6 +24,7 @@ console.log('retrievedObject: ', retrievedObject);
 
 function inizializeDB(){
 	db = new Array(utente1, utente2);
+	localStorage.setItem('db', JSON.stringify(db));
 }
 
 function addEntry(CID, pw, email, nome, cognome, CF, mun){
