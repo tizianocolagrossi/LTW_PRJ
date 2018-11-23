@@ -49,11 +49,18 @@ Oggi Davide mi ha abbandonato ma lo perdono va... avrà molto per bestemmiare ne
  
 #########Giorno 9 (22/11/18)
 (TIZIANO)
-Ho finalmente finito di rudurre il css ho aggiunto un file globale per i css che si ripetevano ora è un po piu leggibile rispetto a prima, non è il top pero ci accontantiamo ora mi rimangono i popup per le notizie. Mo dopo mentre ci sta economia mi invento qualcosa.
+Ho finalmente finito di ridurre il css ho aggiunto un file globale per i css che si ripetevano ora è un po piu leggibile rispetto a prima, non è il top pero ci accontantiamo ora mi rimangono i popup per le notizie. Mo dopo mentre ci sta economia mi invento qualcosa.
 
 
 #########Giorno 10 (23/11/18)
 (DAVIDE)
 Si torna in azione. Ho implementato il database in locale, scritto le funzioni di gestione e collegato il tutto alle funzioni precedentemente esistenti. Sto finendo l'implementazione del profilo utente una volta loggato, in modo che prenda e visualizzi i dati del solo utente che ha effettuato l'accesso. Il calendario per ora sta bene dove sta :)
 Aggiornamento: ho implementato l'interfaccia delle opzioni di gestione dell'account, scritto un logout e creato un paio di pagine html di success. Prossime cose da fare sono il recupero della password, il cambio dell'immagine del profilo e aggiungere ad ogni utente un proprio database delle votazioni effettuate, in modo da non poter votare più di una volta nella stessa votazione.
+
+#########Giorno 11 (24/11/18)
+(DAVIDE)
+Tizià, me sa che stamo a sbaglià qualcosa. O stiamo lavorando da un giorno in meno (quindi questo è il giorno 10 e non 11), oppure abbiamo sbagliato a scrivere le date, perchè oggi è 23/11, non 24 ahaha
+Il codice javascript è più carino di un maiale spazzolato e pulito per la fiera della porchetta. C'ho perso un'ora ma col mal di testa non potevo fare qualcosa di davvero produttivo. Ho realizzato che il recupero della password non è realizzabile senza inviare veramente una email, cosa che si implementa lato server, quindi vedremo casomai quando proveremo a fare il sito online. 
+Ora cazzeggio un po' mentre si ricarica il portatile, poi vedo di iniziare il db delle votazioni e CASOMAI il calendario 
+
 
