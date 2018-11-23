@@ -62,5 +62,5 @@ Aggiornamento: ho implementato l'interfaccia delle opzioni di gestione dell'acco
 Tizià, me sa che stamo a sbaglià qualcosa. O stiamo lavorando da un giorno in meno (quindi questo è il giorno 10 e non 11), oppure abbiamo sbagliato a scrivere le date, perchè oggi è 23/11, non 24 ahaha
 Il codice javascript è più carino di un maiale spazzolato e pulito per la fiera della porchetta. C'ho perso un'ora ma col mal di testa non potevo fare qualcosa di davvero produttivo. Ho realizzato che il recupero della password non è realizzabile senza inviare veramente una email, cosa che si implementa lato server, quindi vedremo casomai quando proveremo a fare il sito online. 
 Ora cazzeggio un po' mentre si ricarica il portatile, poi vedo di iniziare il db delle votazioni e CASOMAI il calendario 
-
-
+(TIZIANO)
+200 OK, per la data sti cazzi XD
