@@ -12,10 +12,17 @@
                
 
 
-//     Formato informazione:[ CID, pw, e-mail, nome, cognome, CF, municipio ]
+/*     Formato informazione:
 
-var utente1 = new Array("AX1234567", "utente1", "dicampi@gmail.com", "Davide", "Di Campi", "DCMDDB97B04H501R", "5")
-var utente2 = new Array("CX12345AB", "utente2", "colagrossi@gmail.com", "Tiziano", "Colagrossi", "CLGTZN97L29L182J", "1") 
+	   database :   [ utente1, utente2, ... utenteN ] 
+	   utente:      [ CID, password, e-mail, nome, cognome, CF, municipio , Array-Votazioni ]
+	   votazione:   [ ID, voto:stringa ]
+*/
+
+var votazione1 = new Array(1, "lista1 nopreferenze")
+var votazione2 = new Array(2, "lista4 nome cognome2")
+var utente1 = new Array("AX1234567", "utente1", "dicampi@gmail.com", "Davide", "Di Campi", "DCMDDB97B04H501R", "5", votazione1)
+var utente2 = new Array("CX12345AB", "utente2", "colagrossi@gmail.com", "Tiziano", "Colagrossi", "CLGTZN97L29L182J", "1", votazione2) 
 
 
 /*
@@ -41,6 +48,10 @@ function refreshDB(localDb){
 	localStorage.setItem('db', JSON.stringify(localDb));
 }
 
+function eraseDB(){
+	localStorage.clear();
+}
+
 function containsDB(ID_value){
 	var localDb = getDB();
 	for(i=0; i<localDb.length; i++){
@@ -50,10 +61,8 @@ function containsDB(ID_value){
 }
 
 function addEntry(CID, pw, email, nome, cognome, CF, mun){
-	var new_entry = new Array(CID, pw, email, nome, cognome, CF, mun);
-	var localDb = JSON.parse(localStorage.getItem('db'));
-	localDb[localDb.length] = new_entry;
-	refreshDB(localDb);
+	var new_entry = new Array(CID, pw, email, nome, cognome, CF, mun, new Array());
+	addUser(new_entry);
 }
 
 function addUser(user){
@@ -76,55 +85,36 @@ function getUser(ID_value){
 	return null;
 }
 
+function setUser(ID_value, userToSet){
+	var local_db = getDB();
+	for(i=0; i<localDb.length; i++){
+		if(localDb[i][0] == ID_value) {
+			localDb[i] = userToSet;
+			break;
+		}
+	}
+}
+
+function getLoggedUser(){
+	return JSON.parse(localStorage.getItem('logged_user'));
+}
+
 function refreshLoggedUser(user){
 	localStorage.setItem('logged_user', JSON.stringify(user));
 }
 
-function modifyPassword(){
-	var localDb = getDB();
-	var current_user = JSON.parse(localStorage.getItem("logged_user"));
-	var old_pw = document.getElementById("old_pw").value;
-	var new_pw = document.getElementById("new_pw").value;
-	var confirm_pw = document.getElementById("confirm_pw").value;
+function addVoto(id, risultato){
+	var local_db = getDB();
+	var current_user = getLoggedUser();
+	var nuova_votazione = new Array(id, risultato);
+	var votazioni_utente = current_user[7];
 	
-	if(validatePW(current_user[0], old_pw)){
-		if(new_pw == confirm_pw){
-			for(i=0; i<localDb.length; i++){
-				if(localDb[i][0] == current_user[0]){
-					current_user[1] = new_pw;
-					localDb[i][1] = new_pw;
-					break;
-				}
-			}
-		}else error("Le nuove password inserite non corrispondono");
-	}else error("Password non corretta");
+	votazioni_utente[votazioni_utente.length] = nuova_votazione;
+	current_user[7] = votazioni_utente;
+	setUser(current_user[0], current_user);
 	
 	refreshLoggedUser(current_user);
-	refreshDB(localDb);
-	console.log(getDB());
-	window.location.href = "change_pw_success.html";
-}
-
-function modifyEmail(){
-	var localDb = getDB();
-	var current_user = JSON.parse(localStorage.getItem("logged_user"));
-	var pw = document.getElementById("e-pw").value;
-	var new_email = document.getElementById("email").value;
-	
-	if(validatePW(current_user[0], pw)){
-		for(i=0; i<localDb.length; i++){
-			if(localDb[i][0] == current_user[0]){
-				current_user[2] = new_email;
-				localDb[i][2] = new_email;
-				break;
-			}
-		}
-	}else error("Password non corretta");
-	
-	refreshLoggedUser(current_user);
-	refreshDB(localDb);
-	console.log(getDB());
-	window.location.href = "change_email_success.html";
+	refreshDB(local_db);
 }
 
 
@@ -268,7 +258,7 @@ function register(){
 					if(password != ""){
 						if(password == confirm_pw){
 							if(!containsDB(ID_value)){
-								var new_user = new Array(ID_value, password, email, nome, cognome, CF_value, municipio);
+								var new_user = new Array(ID_value, password, email, nome, cognome, CF_value, municipio, new Array());
 								addUser(new_user); 
 								console.log("Succesfully registered");
 								window.location.href=("reg_success.html");
@@ -296,6 +286,53 @@ function insertSecretCode(){
 		console.log("Succesfully recovered");
 		window.location.href=("recpw_success.html");
 	}else error("Codice inserito non valido");
+}
+
+function modifyPassword(){
+	var localDb = getDB();
+	var current_user = JSON.parse(localStorage.getItem("logged_user"));
+	var old_pw = document.getElementById("old_pw").value;
+	var new_pw = document.getElementById("new_pw").value;
+	var confirm_pw = document.getElementById("confirm_pw").value;
+	
+	if(validatePW(current_user[0], old_pw)){
+		if(new_pw == confirm_pw){
+			for(i=0; i<localDb.length; i++){
+				if(localDb[i][0] == current_user[0]){
+					current_user[1] = new_pw;
+					localDb[i][1] = new_pw;
+					break;
+				}
+			}
+		}else error("Le nuove password inserite non corrispondono");
+	}else error("Password non corretta");
+	
+	refreshLoggedUser(current_user);
+	refreshDB(localDb);
+	console.log(getDB());
+	window.location.href = "change_pw_success.html";
+}
+
+function modifyEmail(){
+	var localDb = getDB();
+	var current_user = JSON.parse(localStorage.getItem("logged_user"));
+	var pw = document.getElementById("e-pw").value;
+	var new_email = document.getElementById("email").value;
+	
+	if(validatePW(current_user[0], pw)){
+		for(i=0; i<localDb.length; i++){
+			if(localDb[i][0] == current_user[0]){
+				current_user[2] = new_email;
+				localDb[i][2] = new_email;
+				break;
+			}
+		}
+	}else error("Password non corretta");
+	
+	refreshLoggedUser(current_user);
+	refreshDB(localDb);
+	console.log(getDB());
+	window.location.href = "change_email_success.html";
 }
 
 function error(error_message){

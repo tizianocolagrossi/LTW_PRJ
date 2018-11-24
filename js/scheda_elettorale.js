@@ -8,7 +8,9 @@
 
 
 var recap_voto = "";
-
+var lista_scelta= null;
+var candidato_scelto= null;
+//var ID = document.getElementById("id-scheda").value ?
 
 /*
 **=
@@ -19,9 +21,6 @@ var recap_voto = "";
 */
 
 function validateScheda(){
-	var lista_scelta=null;
-	var candidato_scelto=null;
-	
 	var liste = document.getElementsByName("lista");
 	for(i=0; i<liste.length; i++){
 		if(liste[i].checked) lista_scelta = liste[i];
@@ -50,6 +49,8 @@ function validateScheda(){
 			}
 			else{
 				recap_voto = "";
+				lista_scelta = null;
+				candidato_scelto = null;
 				return false;
 			}
 		}
@@ -59,6 +60,8 @@ function validateScheda(){
 	}
 	else{
 		recap_voto = "";
+		lista_scelta = null;
+		candidato_scelto = null;
 		return false;
 	}
 	
@@ -80,6 +83,7 @@ function inviaVoto(){
 		console.log("scheda valida");
 		if(window.confirm(recap_voto)){
 			console.log("voto confermato");
+			//aggiungere votazione all'utente loggato
 			window.location.href = "voto_success.html";
 		}
 		else console.log("voto non confermato");

@@ -64,3 +64,7 @@ Il codice javascript è più carino di un maiale spazzolato e pulito per la fier
 Ora cazzeggio un po' mentre si ricarica il portatile, poi vedo di iniziare il db delle votazioni e CASOMAI il calendario 
 (TIZIANO)
 200 OK, per la data sti cazzi XD
+
+#########Giorno 12 (25/11/18)
+(DAVIDE)
+Aggiungere un campo "votazioni effettuate" agli utenti si sta rivelando più difficile del previsto, ma dovremmo esserci. Ho scritto un bel po' di funzioni e aggiunto il necessario a quelle preesistenti. Ora devo coordinare il tutto con l'html della scheda elettorale. Piove.
