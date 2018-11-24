@@ -68,3 +68,5 @@ Ora cazzeggio un po' mentre si ricarica il portatile, poi vedo di iniziare il db
 #########Giorno 12 (25/11/18)
 (DAVIDE)
 Aggiungere un campo "votazioni effettuate" agli utenti si sta rivelando più difficile del previsto, ma dovremmo esserci. Ho scritto un bel po' di funzioni e aggiunto il necessario a quelle preesistenti. Ora devo coordinare il tutto con l'html della scheda elettorale. Piove.
+(TIZIANO)
+sto allo scholar, con un litro di guinnes davanti, e penso che convenga nascondere l'icona fella scheda elettorale dopo aver inviato la form. poi riazzerare il tutto se si cambia utente. Forse potrebbe essere piu semplice ma con iene farlo lunedi insieme
