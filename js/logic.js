@@ -19,8 +19,8 @@
 	   votazione:   [ ID, voto:stringa ]
 */
 
-var votazione1 = new Array(1, "lista1 nopreferenze")
-var votazione2 = new Array(2, "lista4 nome cognome2")
+var votazione1 = new Array(new Array(1, "lista1 nopreferenze"))
+var votazione2 = new Array(new Array(2, "lista4 nome cognome2"))
 var utente1 = new Array("AX1234567", "utente1", "dicampi@gmail.com", "Davide", "Di Campi", "DCMDDB97B04H501R", "5", votazione1)
 var utente2 = new Array("CX12345AB", "utente2", "colagrossi@gmail.com", "Tiziano", "Colagrossi", "CLGTZN97L29L182J", "1", votazione2) 
 
@@ -37,7 +37,7 @@ var utente2 = new Array("CX12345AB", "utente2", "colagrossi@gmail.com", "Tiziano
 
 function inizializeDB(){
 	db = new Array(utente1, utente2);
-	refreshDB();
+	refreshDB(db);
 }
 
 function getDB(){
@@ -50,6 +50,10 @@ function refreshDB(localDb){
 
 function eraseDB(){
 	localStorage.clear();
+}
+
+function printDB(){
+	console.log(getDB());
 }
 
 function containsDB(ID_value){
@@ -109,7 +113,8 @@ function addVoto(id, risultato){
 	var nuova_votazione = new Array(id, risultato);
 	var votazioni_utente = current_user[7];
 	
-	votazioni_utente[votazioni_utente.length] = nuova_votazione;
+	if(votazioni_utente.length == 0) votazioni_utente = new Array(nuova_votazione);  // non so se è necessario, data com'è fatta
+	else votazioni_utente[votazioni_utente.length] = nuova_votazione;                // la registrazione di un nuovo utente
 	current_user[7] = votazioni_utente;
 	setUser(current_user[0], current_user);
 	
@@ -290,7 +295,7 @@ function insertSecretCode(){
 
 function modifyPassword(){
 	var localDb = getDB();
-	var current_user = JSON.parse(localStorage.getItem("logged_user"));
+	var current_user = getLoggedUser();
 	var old_pw = document.getElementById("old_pw").value;
 	var new_pw = document.getElementById("new_pw").value;
 	var confirm_pw = document.getElementById("confirm_pw").value;
@@ -315,7 +320,7 @@ function modifyPassword(){
 
 function modifyEmail(){
 	var localDb = getDB();
-	var current_user = JSON.parse(localStorage.getItem("logged_user"));
+	var current_user = getLoggedUser();
 	var pw = document.getElementById("e-pw").value;
 	var new_email = document.getElementById("email").value;
 	
