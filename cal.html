@@ -2,6 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
+<script type="text/javascript" src='js/cal.js'> </script>
 <title>Calendario</title>
 <link href="css/global.css" rel="stylesheet" type="text/css">
 <link href="css/bar_style.css" rel="stylesheet" type="text/css">
@@ -33,7 +34,7 @@
             <div class="agenda">
                 <div class="today">
                     <h6>OGGI</h6><br>
-                    <h2>XX MMMMM YYYY</h2>
+                    <h2 id="oggi"><script>buildToday()</script></h2>
                 </div>
                 <div class="eventi">
                     <div class="evento">
@@ -59,7 +60,7 @@
             <div class="calendario">
                 <div class="tb_h">
                     <div class="ar-bk"></div>
-                    <div class="mo">MESE</div>
+                    <div class="mo" id="mese"><script>buildMonth()</script></div>
                     <div class="ar-fo"></div>
                 </div>
                 <div>
@@ -136,5 +137,5 @@
         <div id="push_100"></div>
     </div>
 </body>
-<script async src="js/logic.js"></script>
+<script async src="js/cal.js"></script>
 </html>

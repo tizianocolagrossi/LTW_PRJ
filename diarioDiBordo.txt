@@ -69,4 +69,9 @@ Ora cazzeggio un po' mentre si ricarica il portatile, poi vedo di iniziare il db
 (DAVIDE)
 Aggiungere un campo "votazioni effettuate" agli utenti si sta rivelando più difficile del previsto, ma dovremmo esserci. Ho scritto un bel po' di funzioni e aggiunto il necessario a quelle preesistenti. Ora devo coordinare il tutto con l'html della scheda elettorale. Piove.
 (TIZIANO)
-sto allo scholar, con un litro di guinnes davanti, e penso che convenga nascondere l'icona fella scheda elettorale dopo aver inviato la form. poi riazzerare il tutto se si cambia utente. Forse potrebbe essere piu semplice ma con iene farlo lunedi insieme
+sto allo scholar, con un litro di guinnes davanti, e penso che convenga nascondere l'icona della scheda elettorale dopo aver inviato la form. poi riazzerare il tutto se si cambia utente. Forse potrebbe essere piu semplice ma con iene farlo lunedi insieme
+
+#########Giorno 13 (26/11/18)
+(DAVIDE)
+Con mio grande rammarico sto iniziando sto cazzo di calendario. Che palle. Ho definito qualche variabile globale e dato una letta all'html, facendo magicamente apparire la data attuale al posto di "MESE" o "XX XX XXXX". Direi che per essere domenica ho dato più che a sufficienza. Vedo se dopo ritrovo un po' di voglia.
+
