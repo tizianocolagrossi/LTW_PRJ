@@ -2,6 +2,15 @@
 body{
     background-color: #74d8c6;
 }
+.timbro{
+    padding-left: 55px;
+    position: fixed;
+    width: 60%;
+    left: auto;
+    right: auto;
+    top:10%;
+    height: auto;
+}
 #ht{
     margin: 1em auto;
     text-align: center;
