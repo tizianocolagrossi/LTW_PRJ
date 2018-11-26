@@ -62,7 +62,7 @@ nav{
 #option{
     background-image: url("../icons/md-options.svg");
 }
-#vote{
+#vote, #vote1{
     background-image: url("../icons/md-paper.svg");
 }
 #logout{

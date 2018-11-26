@@ -32,8 +32,39 @@ a:hover{
     margin-top: -1em;
     padding-bottom: 2em;
 }
-
-
+#zona_voto{
+    background-color: #f6f6f6;
+    width: 70%;
+    border: #1c2024 solid;
+    margin: auto;
+    padding: 3em 1em;
+    
+}
+h2{
+    text-align: center;
+    font-size: 3em;
+}
+.tasto{
+    display: inline-block;
+    font-size: 2em;
+    width: 30%;
+    height: 100px;
+    border: #1c2024 solid;
+    text-align: center;
+    line-height: 100px;
+}
+.tasto:hover{
+    background-image: url("../icons/cross.svg");
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 90px;
+}
+.center{
+    display: block;
+    width: 100%;
+    margin: auto;
+    text-align: center;
+}
 p{
     padding: 0em 5em 3em;
 }

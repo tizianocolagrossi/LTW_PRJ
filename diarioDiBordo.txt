@@ -76,3 +76,5 @@ Con mio grande rammarico sto iniziando sto cazzo di calendario. Che palle. Ho de
 (DAVIDE)
 Abbiamo deciso di sistemare la data, essendo in tema calendario (avevamo duplicato il giorno 7). 
 Ebbene sì, ho finalmente deciso di scrivere sto cazzo di calendario. Pensavo peggio in realtà, anche se delle madonne sono inevitabilmente partite. Ora il calendario funziona bene, anche con il cambio dei giorni, anche se per ora non considera il cambio di anno, ma lo sistemerò in giornata. Tocca gestire gli eventi in agenda ed aggiungere i segnalini sul calendario, ma roba da poco rispetto a quello che abbiamo fatto fin'ora. Siamo in dirittura di arrivo.
+(TIZIANO)
+Sono giorni di riposo per me... ho messo un tibrino (da sistemare) sulle pagine scheda elettorele e referendum che viene attivato dopo ch l'utente invia la scheda

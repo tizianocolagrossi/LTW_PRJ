@@ -9,7 +9,7 @@ body {
     height: 100%;
 }
 ::-webkit-scrollbar{
-    background-color: #fff;
+    background-color: #f6f6f6;
     width: 5px;
 }
 ::-webkit-scrollbar-thumb{
