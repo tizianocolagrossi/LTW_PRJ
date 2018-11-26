@@ -314,7 +314,6 @@ function modifyPassword(){
 	
 	refreshLoggedUser(current_user);
 	refreshDB(localDb);
-	console.log(getDB());
 	window.location.href = "change_pw_success.html";
 }
 
@@ -336,7 +335,6 @@ function modifyEmail(){
 	
 	refreshLoggedUser(current_user);
 	refreshDB(localDb);
-	console.log(getDB());
 	window.location.href = "change_email_success.html";
 }
 
