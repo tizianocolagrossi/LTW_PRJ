@@ -37,27 +37,24 @@ MANNAGGIA LA MADONNA ZIO
 
 
 #########Giorno 7 (20/11/18)
-Per ora la giornata non va male ho quasi finito di sistemare la sezione agenda con gli eventi, si lo so, gli eventi sono centrati a merda altro che luca giurato... pero va be pe mo va mooolto bene, ho iniziato a scrivere per il calendario creando una tabella che devo ancora formattare bene pero per ora mi sto un po fermo, riprendo il lavoro sto pomeriggio. 
-
-
-#########Giorno 8 (21/11/18)
 (TIZIANO)
+Per ora la giornata non va male ho quasi finito di sistemare la sezione agenda con gli eventi, si lo so, gli eventi sono centrati a merda altro che luca giurato... pero va be pe mo va mooolto bene, ho iniziato a scrivere per il calendario creando una tabella che devo ancora formattare bene pero per ora mi sto un po fermo, riprendo il lavoro sto pomeriggio. 
 Oggi una giornata decente, ho finito di fare il calendario e ho iniziato ad imèostare le classi e gli identificatori per ogni tabella che poi davide usera sul js per modificare il mese nella tabella e allineare i giorni. Stramanente oggi nessuna smadonnata.
 Aggiornamento delle 23:36 appena finito di sistemare meglio l'aspetto del calendario. Quello che prima era una bozza ora è un po piu rifinito. Manca ancora da rivedere la palette del sito, sopratutto della bara laterale che non mi convince molto la sfimatura non so, forse mi conviene eliminarla o cercare delle sfumature particolari che si addicono al sito. Per il resto non male. Potrei dire che con oggi ho finito, ma non è vero, perche mancano le pagine per le notizie, ora è da vedere se mostrarle come popup in css o creare una pagina diversa, ora ci penso un po su e inizio a fare degli schizzi. Ah ora devo fare una rottura di scatole, devo stampare tutto il css e vedere se posso renderlo piu elegante riducendo le ridondanze ora inizio a stampare tutti i css e domani nelle ora di pausa tra Architetture dei calcolatori e economia mi metto in biblioteca a cercare di sistemare il tutto. 
 Oggi Davide mi ha abbandonato ma lo perdono va... avrà molto per bestemmiare nei prossimi giorni!
 
  
-#########Giorno 9 (22/11/18)
+#########Giorno 8 (21/11/18)
 (TIZIANO)
 Ho finalmente finito di ridurre il css ho aggiunto un file globale per i css che si ripetevano ora è un po piu leggibile rispetto a prima, non è il top pero ci accontantiamo ora mi rimangono i popup per le notizie. Mo dopo mentre ci sta economia mi invento qualcosa.
 
 
-#########Giorno 10 (23/11/18)
+#########Giorno 9 (22/11/18)
 (DAVIDE)
 Si torna in azione. Ho implementato il database in locale, scritto le funzioni di gestione e collegato il tutto alle funzioni precedentemente esistenti. Sto finendo l'implementazione del profilo utente una volta loggato, in modo che prenda e visualizzi i dati del solo utente che ha effettuato l'accesso. Il calendario per ora sta bene dove sta :)
 Aggiornamento: ho implementato l'interfaccia delle opzioni di gestione dell'account, scritto un logout e creato un paio di pagine html di success. Prossime cose da fare sono il recupero della password, il cambio dell'immagine del profilo e aggiungere ad ogni utente un proprio database delle votazioni effettuate, in modo da non poter votare più di una volta nella stessa votazione.
 
-#########Giorno 11 (24/11/18)
+#########Giorno 10 (23/11/18)
 (DAVIDE)
 Tizià, me sa che stamo a sbaglià qualcosa. O stiamo lavorando da un giorno in meno (quindi questo è il giorno 10 e non 11), oppure abbiamo sbagliato a scrivere le date, perchè oggi è 23/11, non 24 ahaha
 Il codice javascript è più carino di un maiale spazzolato e pulito per la fiera della porchetta. C'ho perso un'ora ma col mal di testa non potevo fare qualcosa di davvero produttivo. Ho realizzato che il recupero della password non è realizzabile senza inviare veramente una email, cosa che si implementa lato server, quindi vedremo casomai quando proveremo a fare il sito online. 
@@ -65,13 +62,17 @@ Ora cazzeggio un po' mentre si ricarica il portatile, poi vedo di iniziare il db
 (TIZIANO)
 200 OK, per la data sti cazzi XD
 
-#########Giorno 12 (25/11/18)
+#########Giorno 11 (24/11/18)
 (DAVIDE)
 Aggiungere un campo "votazioni effettuate" agli utenti si sta rivelando più difficile del previsto, ma dovremmo esserci. Ho scritto un bel po' di funzioni e aggiunto il necessario a quelle preesistenti. Ora devo coordinare il tutto con l'html della scheda elettorale. Piove.
 (TIZIANO)
 sto allo scholar, con un litro di guinnes davanti, e penso che convenga nascondere l'icona della scheda elettorale dopo aver inviato la form. poi riazzerare il tutto se si cambia utente. Forse potrebbe essere piu semplice ma con iene farlo lunedi insieme
 
-#########Giorno 13 (26/11/18)
+#########Giorno 12 (25/11/18)
 (DAVIDE)
 Con mio grande rammarico sto iniziando sto cazzo di calendario. Che palle. Ho definito qualche variabile globale e dato una letta all'html, facendo magicamente apparire la data attuale al posto di "MESE" o "XX XX XXXX". Direi che per essere domenica ho dato più che a sufficienza. Vedo se dopo ritrovo un po' di voglia.
 
+#########Giorno 13 (forse) (26/11/18)
+(DAVIDE)
+Abbiamo deciso di sistemare la data, essendo in tema calendario (avevamo duplicato il giorno 7). 
+Ebbene sì, ho finalmente deciso di scrivere sto cazzo di calendario. Pensavo peggio in realtà, anche se delle madonne sono inevitabilmente partite. Ora il calendario funziona bene, anche con il cambio dei giorni, anche se per ora non considera il cambio di anno, ma lo sistemerò in giornata. Tocca gestire gli eventi in agenda ed aggiungere i segnalini sul calendario, ma roba da poco rispetto a quello che abbiamo fatto fin'ora. Siamo in dirittura di arrivo.
