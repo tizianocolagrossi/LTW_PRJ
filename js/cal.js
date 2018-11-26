@@ -1,5 +1,5 @@
 /*
-**=       ____ _       _           _                   _       _     _           
+**=       ____ _       _           _                     _       _     _           
 **==     / ___| | ___ | |__   __ _| |   __   ____ _ _ __(_) __ _| |__ | | ___  ___ 
 **===   | |  _| |/ _ \| '_ \ / _` | |   \ \ / / _` | '__| |/ _` | '_ \| |/ _ \/ __|
 **===   | |_| | | (_) | |_) | (_| | |    \ V / (_| | |  | | (_| | |_) | |  __/\__ \
@@ -10,6 +10,7 @@
 
 var dateObj = new Date();
 var mese = dateObj.getUTCMonth() + 1;
+var display_mese = mese;
 var giorno = dateObj.getUTCDate();
 var anno = dateObj.getUTCFullYear();
 var oggi = giorno + " / " + mese + " / " + anno;
@@ -32,7 +33,26 @@ function buildToday(){
 }
 
 function buildMonth(){
-	var local_month = mese - 1;
-	var campo_mese = document.getElementById("mese");
-	campo_mese.innerHTML = monthText[local_month].toUpperCase();
+	displayMonth(mese-1);
 }
+
+function displayMonth(month){
+	var campo_mese = document.getElementById("mese");
+	campo_mese.innerHTML = monthText[month].toUpperCase();
+	display_mese = month + 1;
+}
+
+function nextMonth(){
+	var indice = display_mese - 1;
+	indice++;
+	displayMonth(indice%12)
+}
+
+function prevMonth(){
+	var indice = display_mese - 1;
+	indice--;
+	if(indice < 0) indice = 11;
+	displayMonth(indice%12)
+}
+
+
