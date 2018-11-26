@@ -110,11 +110,11 @@ td:hover{
     color: #fff;
 }
 .ev{
-    margin: 0 auto;
-    width: 30px;
-    border: 1.5px solid #1c2024;
+    background-image: url("../icons/circle.svg");
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 37px 37px;
     line-height: 30px;
-    border-radius: 20px;
 }
 
 .day-lf{
