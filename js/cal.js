@@ -34,22 +34,34 @@ function buildToday(){
 
 function getLastDay(month){
 	switch(month+1){
-		case (1||3||5||7||8||10||12):
-			return 31;
-		case 2:
-			return 28;
-		case (11||4||6||9):
-			return 30;
+		case 1: return 31;
+		case 2: return 28;
+		case 3: return 31;
+		case 4: return 30;
+		case 5: return 31;
+		case 6: return 30;
+		case 7: return 31;
+		case 8: return 31;
+		case 9: return 30;
+		case 10: return 31;
+		case 11: return 30;
+		case 12: return 31;
 	}
 }
 
 function buildDays(year, month){
-	var objDate =  new Date(year, month, 2);
-	var first_day = objDate.getDay() + 1;
+	var objDate =  new Date(year, month, 1);
+	var first_day = objDate.getDay();
+	if(first_day == 0) first_day = 7;
 	var last_day = getLastDay(month);
 	var active_month = false; 
-	var counter = (new Date(year, month, 2 - (first_day-1)) ).getDate();
+	var counter = (new Date(year, month, 2 - (first_day)) ).getDate();
 	var giorno;
+	var index;
+	
+	//console.log(first_day);
+	console.log(last_day);
+	console.log(month);
 	
 	for(i=1; i<7; i++){
 		for(j=1; j<8; j++){
@@ -63,18 +75,20 @@ function buildDays(year, month){
 				counter = 1;
 			}
 			
-			var index = (i+"_"+j).toString();
+			index = i.toString()+"_"+j.toString();
 			giorno = document.getElementById(index);
-			console.log(index);
-			console.log(giorno);
+			var lista_classi = giorno.classList;
 			
-			/*
-			if(active_month) giorno.removeClass("no-mo");
-			else giorno.addClass("no-mo");
+			//if(active_month) giorno.className -= " no-mo";
+			//else giorno.className += " no-mo";
+			
+			if(active_month) lista_classi.remove("no-mo");
+			else lista_classi.add("no-mo");
 			
 			giorno.innerText = counter;
-			*/
-		}	
+			
+			counter++;
+		}
 	}
 }
 
