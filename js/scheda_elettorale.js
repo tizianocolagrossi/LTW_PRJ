@@ -91,6 +91,28 @@ function inviaVoto(){
 	else error("La scheda non è valida");
 }
 
+function inviaVotoNullo(){
+	var recap_voto = "Il tuo voto verrà annullato e non sarà assegnato a nessuno";
+	recap_voto += ".\nVuoi confermare il voto?";
+	if(window.confirm(recap_voto)){
+		console.log("voto confermato");
+		//aggiungere votazione all'utente loggato
+		window.location.href = "voto_success.html";
+	}
+	else console.log("voto non confermato");
+}
+
+function inviaVotoAstenuto(){
+	var recap_voto = "Il tuo voto verrà dato alla maggioranza, qualunque essa sia";
+	recap_voto += ".\nVuoi confermare il voto?";
+	if(window.confirm(recap_voto)){
+		console.log("voto confermato");
+		//aggiungere votazione all'utente loggato
+		window.location.href = "voto_success.html";
+	}
+	else console.log("voto non confermato");
+}
+
 function error(error_message){
 	window.alert(error_message);
 }

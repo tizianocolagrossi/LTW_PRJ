@@ -1,0 +1,4 @@
+Javascript:
+	- scheda elettorale, aggiungere le 3 votazioni all'utente loggato una volta effettuate
+	- calendario, gestire l'agenda
+	- calendario, gestire gli eventi sul calendario
