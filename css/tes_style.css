@@ -2,14 +2,15 @@
 body{
     background-color: #74d8c6;
 }
+
 .timbro{
-    padding-left: 55px;
-    position: fixed;
-    width: 60%;
-    left: auto;
-    right: auto;
-    top:10%;
-    height: auto;
+	position: fixed;
+	background-image: url("../img/timbro-inviato.svg");
+	background-position: left;
+	background-repeat: no-repeat;
+	left:10%;
+	height: 100%;
+	width: 100%;
 }
 #ht{
     margin: 1em auto;
