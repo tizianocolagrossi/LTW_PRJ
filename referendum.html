@@ -1,11 +1,12 @@
 <!doctype html>
 <html>
 <head>
-<meta charset="utf-8">
-<title>Scheda</title>
-<link href="css/global.css" rel="stylesheet" type="text/css">
-<link href="css/bar_style.css" rel="stylesheet" type="text/css">
-<link href="css/tes_style.css" rel="stylesheet" type="text/css">
+	<meta charset="utf-8">
+	<script async type="text/javascript" src="js/referendum.js"> </script>
+	<title>Scheda</title>
+	<link href="css/global.css" rel="stylesheet" type="text/css">
+	<link href="css/bar_style.css" rel="stylesheet" type="text/css">
+	<link href="css/tes_style.css" rel="stylesheet" type="text/css">
 </head>
 
 <body>
@@ -30,25 +31,27 @@
         </div></a>
          
     </nav>
+       <div id="id-scheda" hidden>00000009</div>
     <div id="cont">
         <div id="main_content">
-			<div class="timbro" style="visibility: hidden"></div>
+			<div class="timbro" id="timbro" style="visibility:hidden"></div>
             <h1 id="ht">Referendum</h1>
             <div class="cont_btn bg-ws">
                             <input type="button" value="Voto nullo" onclick="inviaVotoNullo()">
                             <input type="button" value="Astieniti" onclick="inviaVotoAstenuto()">
             </div>
             <div id="zona_voto">
-                <h2>TESTO ?</h2>
+                <h2>Volete voi che Roma Capitale affidi tutti i servizi relativi al trasporto pubblico locale di superficie e sotterraneo ovvero su gomma e rotaia mediante gare pubbliche, anche ad una pluralità di gestori e garantendo forme di concorrenza comparativa, nel rispetto della disciplina vigente a tutela della salvaguardia e della ricollocazione dei lavoratori nella fase di ristrutturazione del servizio?</h2>
                 <div class="center">
-                    <div class="tasto">SI</div>
-                    <div class="tasto">NO</div>
+                    <div class="tasto" onclick="inviaVoto('SI')">SI</div>
+                    <div class="tasto" onclick="inviaVoto('NO')">NO</div>
                 </div>
             </div>
 
         </div>
         <div id="push_100"></div>
-    </div>    
+    </div>  
+    <script>checkTimbro()</script>  
 </body>
-<script async src="js/scheda_elettorale.js"></script>
+<script async src="js/referendum.js"></script>
 </html>

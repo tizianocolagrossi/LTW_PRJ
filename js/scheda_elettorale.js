@@ -22,6 +22,14 @@ var ID_scheda = document.getElementById("id-scheda").innerText;
 */
 
 
+function checkTimbro(){
+	if(!votoPossibile){
+		console.log("ue");
+		var timbro = document.getElementById("timbro");
+		timbro.style = "visibility:visible";
+	}
+}
+
 function votoPossibile(){
 	var current_user = JSON.parse(localStorage.getItem('logged_user'));
 	var votazioni_utente = current_user[7];
