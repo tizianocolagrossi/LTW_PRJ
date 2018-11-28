@@ -8,9 +8,56 @@
 
 
 var recap_voto = "";
-var lista_scelta= null;
-var candidato_scelto= null;
-//var ID = document.getElementById("id-scheda").value ?
+var lista_scelta = "";
+var candidato_scelto = "";
+var ID_scheda = document.getElementById("id-scheda").value;
+
+
+/*
+**=
+**===   /------------------\
+**=====  Database functions
+**===   \------------------/
+**=
+*/
+
+
+function votoPossibile(){
+	var current_user = JSON.parse(localStorage.getItem('logged_user'));
+	var votazioni_utente = current_user[7];
+	for(i=0; i<votazioni_utente.length; i++){
+		if(votazioni_utente[i][0] == ID_scheda) return false;
+	}
+	return true;
+	
+}
+
+function addVoto(id, risultato){
+	var local_db = JSON.parse(localStorage.getItem('db'));
+	var current_user = JSON.parse(localStorage.getItem('logged_user'));
+	var nuova_votazione = new Array(id, risultato);
+	var votazioni_utente = current_user[7];
+	
+	if(votoPossibile()){
+		if(votazioni_utente.length == 0) votazioni_utente = new Array(nuova_votazione);  // non so se è necessario, data com'è fatta
+		else votazioni_utente[votazioni_utente.length] = nuova_votazione;                // la registrazione di un nuovo utente
+		current_user[7] = votazioni_utente;
+		setUser(current_user[0], current_user);
+		
+		for(i=0; i<localDb.length; i++){
+			if(localDb[i][0] == current_user[0]) {
+				localDb[i] = current_user;
+				break;
+			}
+		}
+	
+		localStorage.setItem('logged_user', JSON.stringify(current_user));
+		localStorage.setItem('db', JSON.stringify(localDb));
+		return true;
+		
+	}else return false;
+}
+
 
 /*
 **=
@@ -38,9 +85,9 @@ function validateScheda(){
 	console.log(candidato_scelto.parentElement.className[13]);
 	*/
 	
-	if(lista_scelta != null){
+	if(lista_scelta != ""){
 		recap_voto = "Hai scelto la lista " + lista_scelta.value;
-		if(candidato_scelto != null){
+		if(candidato_scelto != ""){
 			recap_voto += " della quale hai scelto il candidato " + candidato_scelto.value;
 			var numero_lista_candidato = candidato_scelto.parentElement.className[13]; // <----- implementazione stile Luca Giurato
 			if(lista_scelta.value == numero_lista_candidato){
@@ -49,8 +96,8 @@ function validateScheda(){
 			}
 			else{
 				recap_voto = "";
-				lista_scelta = null;
-				candidato_scelto = null;
+				lista_scelta = "";
+				candidato_scelto = "";
 				return false;
 			}
 		}
@@ -60,8 +107,8 @@ function validateScheda(){
 	}
 	else{
 		recap_voto = "";
-		lista_scelta = null;
-		candidato_scelto = null;
+		lista_scelta = "";
+		candidato_scelto = "";
 		return false;
 	}
 	
@@ -82,35 +129,34 @@ function inviaVoto(){
 	if(scheda_valida){
 		console.log("scheda valida");
 		if(window.confirm(recap_voto)){
-			console.log("voto confermato");
-			//aggiungere votazione all'utente loggato
-			window.location.href = "voto_success.html";
-		}
-		else console.log("voto non confermato");
-	}
-	else error("La scheda non è valida");
+			if(addVoto(ID_scheda, lista_scelta + candidato_scelto)){
+				console.log("voto confermato");
+				window.location.href = "voto_success.html";
+			}else error("Hai già inviato il tuo voto!"); 
+		}else console.log("voto non confermato");
+	}else error("La scheda non è valida");
 }
 
 function inviaVotoNullo(){
 	var recap_voto = "Il tuo voto verrà annullato e non sarà assegnato a nessuno";
 	recap_voto += ".\nVuoi confermare il voto?";
 	if(window.confirm(recap_voto)){
-		console.log("voto confermato");
-		//aggiungere votazione all'utente loggato
-		window.location.href = "voto_success.html";
-	}
-	else console.log("voto non confermato");
+		if(addVoto(ID_scheda, lista_scelta + candidato_scelto)){
+			console.log("voto confermato");
+			window.location.href = "voto_success.html";
+		}else error("Hai già inviato il tuo voto!"); 
+	}else console.log("voto non confermato");
 }
 
 function inviaVotoAstenuto(){
 	var recap_voto = "Il tuo voto verrà dato alla maggioranza, qualunque essa sia";
 	recap_voto += ".\nVuoi confermare il voto?";
 	if(window.confirm(recap_voto)){
-		console.log("voto confermato");
-		//aggiungere votazione all'utente loggato
-		window.location.href = "voto_success.html";
-	}
-	else console.log("voto non confermato");
+		if(addVoto(ID_scheda, lista_scelta + candidato_scelto)){
+			console.log("voto confermato");
+			window.location.href = "voto_success.html";
+		}else error("Hai già inviato il tuo voto!"); 
+	}else console.log("voto non confermato");
 }
 
 function error(error_message){

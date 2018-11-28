@@ -35,28 +35,28 @@ var utente2 = new Array("CX12345AB", "utente2", "colagrossi@gmail.com", "Tiziano
 */
 
 
-function inizializeDB(){
+export function inizializeDB(){
 	db = new Array(utente1, utente2);
 	refreshDB(db);
 }
 
-function getDB(){
+export function getDB(){
 	return JSON.parse(localStorage.getItem('db'));
 }
 
-function refreshDB(localDb){
+export function refreshDB(localDb){
 	localStorage.setItem('db', JSON.stringify(localDb));
 }
 
-function eraseDB(){
+export function eraseDB(){
 	localStorage.clear();
 }
 
-function printDB(){
+export function printDB(){
 	console.log(getDB());
 }
 
-function containsDB(ID_value){
+export function containsDB(ID_value){
 	var localDb = getDB();
 	for(i=0; i<localDb.length; i++){
 		if(localDb[i][0] == ID_value) return true;
