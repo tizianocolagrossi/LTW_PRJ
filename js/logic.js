@@ -19,8 +19,8 @@
 	   votazione:   [ ID, voto:stringa ]
 */
 
-var votazione1 = new Array(new Array(1, "lista1 nopreferenze"))
-var votazione2 = new Array(new Array(2, "lista4 nome cognome2"))
+var votazione1 = new Array(new Array("00000007", "1noPreferenze"))
+var votazione2 = new Array(new Array("00000010", "4nome2"))
 var utente1 = new Array("AX1234567", "utente1", "dicampi@gmail.com", "Davide", "Di Campi", "DCMDDB97B04H501R", "5", votazione1)
 var utente2 = new Array("CX12345AB", "utente2", "colagrossi@gmail.com", "Tiziano", "Colagrossi", "CLGTZN97L29L182J", "1", votazione2) 
 
@@ -35,28 +35,28 @@ var utente2 = new Array("CX12345AB", "utente2", "colagrossi@gmail.com", "Tiziano
 */
 
 
-export function inizializeDB(){
+function inizializeDB(){
 	db = new Array(utente1, utente2);
 	refreshDB(db);
 }
 
-export function getDB(){
+function getDB(){
 	return JSON.parse(localStorage.getItem('db'));
 }
 
-export function refreshDB(localDb){
+function refreshDB(localDb){
 	localStorage.setItem('db', JSON.stringify(localDb));
 }
 
-export function eraseDB(){
+function eraseDB(){
 	localStorage.clear();
 }
 
-export function printDB(){
+function printDB(){
 	console.log(getDB());
 }
 
-export function containsDB(ID_value){
+function containsDB(ID_value){
 	var localDb = getDB();
 	for(i=0; i<localDb.length; i++){
 		if(localDb[i][0] == ID_value) return true;
