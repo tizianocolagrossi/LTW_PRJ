@@ -171,7 +171,7 @@ function validateID(ID_value){
 function validatePW(ID_value, PW_value){
 	if(PW_value == "") return -3;
 	var db = JSON.parse(localStorage.getItem("db"));
-	
+	if(db == null) return -1;
 	for(i=0; i<db.length; i++){
 		if(db[i][0] == ID_value){
 			if(db[i][1] == PW_value) return 1;
