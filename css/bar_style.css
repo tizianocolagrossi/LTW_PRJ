@@ -29,10 +29,7 @@ nav{
     padding: 15px 20px;
     /*aggiungere colore del campo attivo e nel html sostituire la classe
     iconbarcont con iconbarcontactive*/
-    background-color: #fff;
-    background: -moz-linear-gradient(-45deg, #fff 0%, #676767 100%);
-    background: -webkit-linear-gradient(135deg, #fff 0%, #676767 100%);
-    background: linear-gradient(135deg, #fff 0%, #676767 100%);
+    background-color: #f6f6f6;
 }
 .icobarcont{
     padding: 15px 20px;
@@ -42,9 +39,6 @@ nav{
 }
 .icobarcont:hover{
     background-color: #ffb300;
-    background: -moz-linear-gradient(-45deg, #ffb300 0%, #ce8600 100%);
-    background: -webkit-linear-gradient(135deg, #ffb300 0%, #ce8600 100%);
-    background: linear-gradient(135deg, #ffb300 0%, #ce8600 100%);
 }
 
 #logoutbg{

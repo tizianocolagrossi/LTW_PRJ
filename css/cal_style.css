@@ -108,7 +108,7 @@ td{
     border: 1px solid #1c2024;
 }
 td:hover{
-    background-color: #ffb300;
+    background-color: #8e141f;/*#ffb300;*/
     color: #fff;
 }
 .close{
