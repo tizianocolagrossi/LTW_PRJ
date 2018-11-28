@@ -38,6 +38,7 @@ nav{
 }
 .icobarcont:hover{
     background-color: #ffb300;
+    cursor: pointer;
 }
 
 #logoutbg{
