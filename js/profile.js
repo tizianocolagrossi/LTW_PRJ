@@ -14,3 +14,9 @@ function buildProfileMun(){
 	campo_mun.innerHTML = "MUNICIPIO: " + JSON.parse(localStorage.getItem('logged_user'))[6];
 }
 
+function log_out(){
+	if(window.confirm("Vuoi disconnetterti?")){
+		localStorage.setItem('logged_user', JSON.stringify(null));
+		window.location.href = "index.html"
+	}
+}

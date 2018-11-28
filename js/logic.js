@@ -241,8 +241,10 @@ function log_in(){
 }
 
 function log_out(){
-	localStorage.setItem('logged_user', JSON.stringify(null));
-	window.location.href = "index.html";
+	if(window.confirm("Vuoi disconnetterti?")){
+		localStorage.setItem('logged_user', JSON.stringify(null));
+		window.location.href = "index.html"
+	}
 }
 
 function register(){

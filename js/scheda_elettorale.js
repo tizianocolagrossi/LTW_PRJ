@@ -22,9 +22,8 @@ var ID_scheda = document.getElementById("id-scheda").innerText;
 */
 
 
-function checkTimbro(){
-	if(!votoPossibile){
-		console.log("ue");
+function x(){
+	if(!votoPossibile()){
 		var timbro = document.getElementById("timbro");
 		timbro.style = "visibility:visible";
 	}
@@ -167,6 +166,13 @@ function inviaVotoAstenuto(){
 			window.location.href = "voto_success.html";
 		}else error("Hai già inviato il tuo voto!"); 
 	}else console.log("voto non confermato");
+}
+
+function log_out(){
+	if(window.confirm("Vuoi disconnetterti?")){
+		localStorage.setItem('logged_user', JSON.stringify(null));
+		window.location.href = "index.html"
+	}
 }
 
 function error(error_message){

@@ -11,35 +11,36 @@
 </head>
 
 <body>
-     <nav id="navbar">
-        <a href="profilo.html"><div class="icobarcont" id="homebg">
-            <div class="icobar" id="home"></div>
-        </div></a>
-        <a href="cal.html"><div class="icobarcont" id="calendarbg">
-            <div class="icobar" id="calendar"></div>
-        </div></a>
-        <a href="opt.html"><div class="icobarcont" id="optionbg">
-            <div class="icobar" id="option"></div>
-        </div></a>
-        <a href="scheda_elettorale.html"><div class="icobarcont" id="votebg">
-            <div class="icobar" id="vote"></div>
-        </div></a>
-        <a href="referendum.html"><div class="icobarcontactive" id="votebg1">
-            <div class="icobar" id="vote1"></div>
-        </div></a>
-        <a href="index.html" onclick="log_out()"><div class="icobarcont" id="logoutbg">
-            <div class="icobar" id="logout"></div>
-        </div></a>
-         
+    <nav id="navbar">
+    <a href="profilo.html"><div class="icobarcont" id="homebg">
+    	<div class="icobar" id="home"></div>
+    </div></a>
+    <a href="cal.html"><div class="icobarcont" id="calendarbg">
+        <div class="icobar" id="calendar"></div>
+    </div></a>
+    <a href="opt.html"><div class="icobarcont" id="optionbg">
+        <div class="icobar" id="option"></div>
+    </div></a>
+    <a href="scheda_elettorale.html"><div class="icobarcont" id="votebg">
+        <div class="icobar" id="vote"></div>
+    </div></a>
+    <a href="referendum.html"><div class="icobarcontactive" id="votebg">
+        <div class="icobar" id="vote1"></div>
+    </div></a>
+    <div class="icobarcont" id="logoutbg" onclick="log_out()">
+        <div class="icobar" id="logout"></div>
+    </div>
     </nav>
-       <div id="id-scheda" hidden>00000009</div>
+    
+    <div id="id-scheda" hidden>00000009</div>
     <div id="cont">
         <div id="main_content">
 			<div class="timbro" id="timbro" style="visibility:hidden"></div>
+			<script>x()</script>
             <h1 id="ht">Referendum</h1>
             <div class="cont_btn bg-ws">
-                            <input type="button" value="Voto nullo" onclick="inviaVotoNullo()">
-                            <input type="button" value="Astieniti" onclick="inviaVotoAstenuto()">
+             	<input type="button" value="Voto nullo" onclick="inviaVotoNullo()">
+                <input type="button" value="Astieniti" onclick="inviaVotoAstenuto()">
             </div>
             <div id="zona_voto">
                 <h2>Volete voi che Roma Capitale affidi tutti i servizi relativi al trasporto pubblico locale di superficie e sotterraneo ovvero su gomma e rotaia mediante gare pubbliche, anche ad una pluralità di gestori e garantendo forme di concorrenza comparativa, nel rispetto della disciplina vigente a tutela della salvaguardia e della ricollocazione dei lavoratori nella fase di ristrutturazione del servizio?</h2>
@@ -52,7 +53,5 @@
         </div>
         <div id="push_100"></div>
     </div>  
-    <script>checkTimbro()</script>  
 </body>
-<script async src="js/referendum.js"></script>
 </html>

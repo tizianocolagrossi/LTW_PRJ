@@ -123,5 +123,11 @@ function prevMonth(){
 	displayMonth(display_anno, indice%12)
 }
 
+function log_out(){
+	if(window.confirm("Vuoi disconnetterti?")){
+		localStorage.setItem('logged_user', JSON.stringify(null));
+		window.location.href = "index.html"
+	}
+}
 
 
