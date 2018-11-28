@@ -72,9 +72,13 @@ sto allo scholar, con un litro di guinnes davanti, e penso che convenga nasconde
 (DAVIDE)
 Con mio grande rammarico sto iniziando sto cazzo di calendario. Che palle. Ho definito qualche variabile globale e dato una letta all'html, facendo magicamente apparire la data attuale al posto di "MESE" o "XX XX XXXX". Direi che per essere domenica ho dato più che a sufficienza. Vedo se dopo ritrovo un po' di voglia.
 
-#########Giorno 13 (forse) (26/11/18)
+#########Giorno 13 (26/11/18)
 (DAVIDE)
 Abbiamo deciso di sistemare la data, essendo in tema calendario (avevamo duplicato il giorno 7). 
 Ebbene sì, ho finalmente deciso di scrivere sto cazzo di calendario. Pensavo peggio in realtà, anche se delle madonne sono inevitabilmente partite. Ora il calendario funziona bene, anche con il cambio dei giorni, anche se per ora non considera il cambio di anno, ma lo sistemerò in giornata. Tocca gestire gli eventi in agenda ed aggiungere i segnalini sul calendario, ma roba da poco rispetto a quello che abbiamo fatto fin'ora. Siamo in dirittura di arrivo.
 (TIZIANO)
 Sono giorni di riposo per me... ho messo un tibrino (da sistemare) sulle pagine scheda elettorele e referendum che viene attivato dopo ch l'utente invia la scheda
+
+#########Giorno 15 (28/11/18)
+(DAVIDE)
+Oggi sono volati un botto di santi e madonne, ma siamo in dirittura di arrivo. A parte la gestione degli eventi del calendario e dell'agenda e qualche piccolezza quì e li, abbiamo praticamente finito. Ci si becca domani, per oggi stacchiamo.
