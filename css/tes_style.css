@@ -2,7 +2,13 @@
 body{
     background-color: #74d8c6;
 }
-
+.bg-ws{
+    background: #f6f6f6;
+    border: #1c2024 solid;
+    margin: 0 auto 2.5em;
+    width: 64%;
+    
+}
 .timbro{
 	position: fixed;
 	background-image: url("../img/timbro-inviato.svg");
