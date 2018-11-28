@@ -10,7 +10,7 @@
 var recap_voto = "";
 var lista_scelta = "";
 var candidato_scelto = "";
-var ID_scheda = document.getElementById("id-scheda").value;
+var ID_scheda = document.getElementById("id-scheda").innerText;
 
 
 /*
@@ -42,17 +42,16 @@ function addVoto(id, risultato){
 		if(votazioni_utente.length == 0) votazioni_utente = new Array(nuova_votazione);  // non so se è necessario, data com'è fatta
 		else votazioni_utente[votazioni_utente.length] = nuova_votazione;                // la registrazione di un nuovo utente
 		current_user[7] = votazioni_utente;
-		setUser(current_user[0], current_user);
 		
-		for(i=0; i<localDb.length; i++){
-			if(localDb[i][0] == current_user[0]) {
-				localDb[i] = current_user;
+		for(i=0; i<local_db.length; i++){
+			if(local_db[i][0] == current_user[0]) {
+				local_db[i] = current_user;
 				break;
 			}
 		}
 	
 		localStorage.setItem('logged_user', JSON.stringify(current_user));
-		localStorage.setItem('db', JSON.stringify(localDb));
+		localStorage.setItem('db', JSON.stringify(local_db));
 		return true;
 		
 	}else return false;
@@ -129,7 +128,10 @@ function inviaVoto(){
 	if(scheda_valida){
 		console.log("scheda valida");
 		if(window.confirm(recap_voto)){
-			if(addVoto(ID_scheda, lista_scelta + candidato_scelto)){
+			var preferenza;
+			if(candidato_scelto != "") preferenza = candidato_scelto.value;
+			else preferenza = "noPreferenze";
+			if(addVoto(ID_scheda, lista_scelta.value + preferenza)){
 				console.log("voto confermato");
 				window.location.href = "voto_success.html";
 			}else error("Hai già inviato il tuo voto!"); 
@@ -141,7 +143,7 @@ function inviaVotoNullo(){
 	var recap_voto = "Il tuo voto verrà annullato e non sarà assegnato a nessuno";
 	recap_voto += ".\nVuoi confermare il voto?";
 	if(window.confirm(recap_voto)){
-		if(addVoto(ID_scheda, lista_scelta + candidato_scelto)){
+		if(addVoto(ID_scheda, "votoNullo")){
 			console.log("voto confermato");
 			window.location.href = "voto_success.html";
 		}else error("Hai già inviato il tuo voto!"); 
@@ -152,7 +154,7 @@ function inviaVotoAstenuto(){
 	var recap_voto = "Il tuo voto verrà dato alla maggioranza, qualunque essa sia";
 	recap_voto += ".\nVuoi confermare il voto?";
 	if(window.confirm(recap_voto)){
-		if(addVoto(ID_scheda, lista_scelta + candidato_scelto)){
+		if(addVoto(ID_scheda, "astenuto")){
 			console.log("voto confermato");
 			window.location.href = "voto_success.html";
 		}else error("Hai già inviato il tuo voto!"); 
