@@ -60,7 +60,9 @@ function showInAgenda(evento){
 	var current_event = evento;
 	return function() {
 		var descr = current_event[3];
-		//scrivere in agenda
+		var container = document.getElementById("event-container");
+		container.innerHTML = '<div class="evento"><div class="day"> <p class="tcv">' + current_event[0] +'<br>'+
+							  monthText[current_event[1]] + '</p></div>' + '<div class="info"><p>' + descr + '</p></div></div>';
 	}
 }
 
