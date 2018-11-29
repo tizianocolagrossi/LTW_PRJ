@@ -1,4 +1,3 @@
-Javascript:
-	- calendario, gestire l'agenda
-	- calendario, gestire gli eventi sul calendario
-	basta?
+Javascript/Html:
+	- calendario, implementare i bottoni per chiudere la descrizione di un evento una volta visualizzato nello spazio dell'agenda
+	- ? calendario, implementare la possibilità di aggiungere e togliere un evento nella lista predefinita dell'agenda
