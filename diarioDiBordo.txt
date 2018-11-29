@@ -82,3 +82,7 @@ Sono giorni di riposo per me... ho messo un tibrino (da sistemare) sulle pagine 
 #########Giorno 15 (28/11/18)
 (DAVIDE)
 Oggi sono volati un botto di santi e madonne, ma siamo in dirittura di arrivo. A parte la gestione degli eventi del calendario e dell'agenda e qualche piccolezza quì e li, abbiamo praticamente finito. Ci si becca domani, per oggi stacchiamo.
+
+#########Giorno 16 (29/11/18)
+(DAVIDE) 
+Anche oggi ho chiesto a Cristo di scendere in terra per fargli qualche appunto sulla mia visione del debugging di js, ma alla fine ho implementato la gestione degli eventi, inclusa la visualizzazione nel riquadro dell'agenda quando clicchi sullo specifico evento. Manca davvero poco, qualche piccolezza e poi si fa un po' di alpha-testing in giro. Tiziano ha anche iniziato la versione online, quindi caro diario ci continueremo a sentire ancora per un po'..
