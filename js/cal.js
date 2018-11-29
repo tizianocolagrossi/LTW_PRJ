@@ -19,6 +19,23 @@ var monthText = ["Gennaio","Febbraio","Marzo","Aprile","Maggio","Giugno","Luglio
 
 
 /*
+**=      _____                 _       
+**==    | ____|_   _____ _ __ | |_ ___ 
+**===   |  _| \ \ / / _ \ '_ \| __/ __|
+**===   | |___ \ V /  __/ | | | |_\__ \
+**==    |_____| \_/ \___|_| |_|\__|___/
+**=                                   
+*/
+
+//   Evento = [ giorno, mese: da 0 a 11, anno,  descrizione:String ]
+
+var evento1 = new Array(22, 11, 2018, "Fine delle lezioni");
+var evento2 = new Array(3, 0, 2019, "Elezioni E Lezioni - The Movie");
+var evento3 = new Array(1, 0, 2020, "Fine del mondo");
+var lista_eventi = new Array(evento1, evento2, evento3);
+
+
+/*
 **=      ____                  _               __                  _   _                 
 **==    / ___|  ___ _ ____   _(_) ___ ___     / _|_   _ _ __   ___| |_(_) ___  _ __  ___ 
 **===   \___ \ / _ \ '__\ \ / / |/ __/ _ \   | |_| | | | '_ \ / __| __| |/ _ \| '_ \/ __|
@@ -27,6 +44,25 @@ var monthText = ["Gennaio","Febbraio","Marzo","Aprile","Maggio","Giugno","Luglio
 **=                                                                                    
 */
 
+
+function fillEvento(year, month, day, giorno){
+	var lista_classi = giorno.classList;
+	for(k=0; k<lista_eventi.length; k++){
+		var evento = lista_eventi[k];
+		if(evento[0] == day && evento[1] == month && evento[2] == year) {
+			lista_classi.add("ev");
+			giorno.addEventListener("click", showInAgenda(evento), false);
+		}
+	}
+}
+
+function showInAgenda(evento){
+	var current_event = evento;
+	return function() {
+		var descr = current_event[3];
+		//scrivere in agenda
+	}
+}
 
 function buildToday(){
 	var campo_oggi = document.getElementById("oggi");
@@ -85,8 +121,16 @@ function buildDays(year, month){
 			giorno = document.getElementById(index);
 			var lista_classi = giorno.classList;
 			
-			if(active_month) lista_classi.remove("no-mo");
-			else lista_classi.add("no-mo");
+			if(active_month) {
+				lista_classi.remove("no-mo");
+				lista_classi.remove("ev");
+				fillEvento(year, month, counter, giorno);
+			}
+			else {
+				lista_classi.add("no-mo");
+				lista_classi.remove("ev");
+				giorno.removeEventListener("click", showInAgenda);
+			}
 			
 			giorno.innerText = counter;
 			
