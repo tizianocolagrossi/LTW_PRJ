@@ -19,7 +19,6 @@
     height: 100px;
     background: #1c2024;
     display: table;
-    margin-top: 1em;
 }
 
 .today>h2{
@@ -42,7 +41,13 @@
     overflow-x: auto;
     overflow-y: hidden!important;
 }
-
+.vuoto{
+    background-image: url("../img/testo-preferiti-g.svg");
+    background-position: center;
+    
+    background-repeat: no-repeat;
+    background-size: auto;
+}
 .evento{
     width: 96.5%;
     height: auto;
