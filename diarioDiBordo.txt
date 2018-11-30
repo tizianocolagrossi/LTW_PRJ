@@ -86,3 +86,6 @@ Oggi sono volati un botto di santi e madonne, ma siamo in dirittura di arrivo. A
 #########Giorno 16 (29/11/18)
 (DAVIDE) 
 Anche oggi ho chiesto a Cristo di scendere in terra per fargli qualche appunto sulla mia visione del debugging di js, ma alla fine ho implementato la gestione degli eventi, inclusa la visualizzazione nel riquadro dell'agenda quando clicchi sullo specifico evento. Manca davvero poco, qualche piccolezza e poi si fa un po' di alpha-testing in giro. Tiziano ha anche iniziato la versione online, quindi caro diario ci continueremo a sentire ancora per un po'..
+#########Giorno 17 (30/11/18)
+(TIZIANO)
+Ormai abbiano quasi finito, sento davide che bestemmia scrivendo jacascript, bel sottofindo, michele che se la prende con daniil perche non si capisce quello che scrive. Una bella giornata insomma!
