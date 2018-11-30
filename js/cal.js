@@ -33,7 +33,7 @@ var evento1 = new Array(22, 11, 2018, "Fine delle lezioni");
 var evento2 = new Array(3, 0, 2019, "Elezioni E Lezioni - The Movie");
 var evento3 = new Array(1, 0, 2020, "Fine del mondo");
 var evento4 = new Array(14, 11, 2018, "Primo giorno utile per la consegna del progetto di Linguaggi e Tecnologie per il Web. Questo testo è appositamente lungo per testare la visualizzazione in caso di descrizione più lunga e accurata di un particolare evento.");
-var evento5 = new Array(14, 11, 2018, "Lorem ipsum tu matrem quella magna baldraccam, id est ea faciat bocchinos cumsque.");
+var evento5 = new Array(14, 11, 2018, "Lorem ipsum tu matrem ea magnam baldraccam, id est ea faciat bocchinos cumsque.");
 var lista_eventi = new Array(evento1, evento2, evento3, evento4, evento5);
 
 
@@ -61,13 +61,23 @@ function fillEvento(year, month, day, giorno){
 function showInAgenda(giorno, evento){
 	var current_event = evento;
 	var current_giorno = giorno;
-	return function() {
+	return function writeAgenda() {
 		var descr = current_event[3];
 		var container = document.getElementById("event-container");
-		container.innerHTML += '<div class="evento"><div class="day"> <p class="tcv">' + current_event[0] +'<br>'+
-							  monthText[current_event[1]] + '</p></div>' + '<div class="info"><p>' + descr + '</p></div></div>';
-		current_giorno.removeEventListener("click", showInAgenda);
+		container.innerHTML = '<div class="evento"><div class="day"> <p class="tcv">' + current_event[0] +'<br>'+
+								monthText[current_event[1]] + '</p></div>' + '<div class="info"><p>' + descr + '</p></div></div>';
+		//this.removeEventListener("click", writeAgenda);
+		
+		this.classList.add("sel");  // --> per mantenere il colore
+		
+		var close_btn = document.getElementById("close");
+		close_btn.style = "visibility: visible";
+		close_btn.addEventListener("click", closeAgendaEvent);
 	}
+}
+
+function closeAgendaEvent(){
+	console.log(this);
 }
 
 function buildToday(){
