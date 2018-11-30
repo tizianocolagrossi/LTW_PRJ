@@ -72,12 +72,23 @@ function showInAgenda(giorno, evento){
 		
 		var close_btn = document.getElementById("close");
 		close_btn.style = "visibility: visible";
-		close_btn.addEventListener("click", closeAgendaEvent);
+		close_btn.addEventListener("click", closeAgendaEvent(this));
 	}
 }
 
-function closeAgendaEvent(){
-	console.log(this);
+function closeAgendaEvent(cella){
+	return function closeAux(){
+		cella.classList.remove("sel");
+		var close_btn = document.getElementById("close");
+		close_btn.style = "visibility: hidden";
+		close_btn.removeEventListener("click", closeAux)
+		loadPreferiti();
+	}
+	
+}
+
+function loadPreferiti(){
+	console.log("TODO");
 }
 
 function buildToday(){
