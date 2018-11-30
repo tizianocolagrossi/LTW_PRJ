@@ -40,19 +40,24 @@
     width: 99.9%;
     height: 485px;
     overflow-x: auto;
+    overflow-y: hidden!important;
 }
 
 .evento{
-    width: 90%;
+    width: 96.5%;
     height: auto;
     margin: 0 auto 15px;
     padding: 5px;
+    transition-duration: 700ms;
 }
-
+.evento:hover{
+    background: #FFB348;
+}
 .day{
     display: inline-block;
     height: 100%;
     width: 75px;
+    padding-right: 10px;
     vertical-align: middle;
 }
 .info{
@@ -65,14 +70,14 @@
     vertical-align: middle;
     text-align: left;
     padding-left: 10px;
+    transition-duration: 1000ms;
     
 }
 .info:hover{
     border-left: 2px #8e141f solid;
     cursor: pointer;
-    color: #8e141f;
-    
 }
+
 .tcv{
     margin-top: 18px;
 }
