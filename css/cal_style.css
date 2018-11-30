@@ -48,6 +48,7 @@
     margin: 0 auto 15px;
     padding: 5px;
 }
+
 .day{
     display: inline-block;
     height: 100%;
@@ -64,6 +65,12 @@
     vertical-align: middle;
     text-align: left;
     padding-left: 10px;
+    
+}
+.info:hover{
+    border-left: 2px #fcc solid;
+    cursor: pointer;
+    color: #fcc;
     
 }
 .tcv{
@@ -112,6 +119,10 @@ td{
 td:hover{
     background-color: #8e141f;/*#ffb300;*/
     color: #fff;
+}
+.sel{
+    background-color: #8e141f;/*#ffb300;*/
+    color: #fff;  
 }
 .close{
     background: #fff;
