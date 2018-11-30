@@ -33,19 +33,8 @@ var evento1 = new Array(22, 11, 2018, "Fine delle lezioni");
 var evento2 = new Array(3, 0, 2019, "Elezioni E Lezioni - The Movie");
 var evento3 = new Array(1, 0, 2020, "Fine del mondo");
 var evento4 = new Array(14, 11, 2018, "Primo giorno utile per la consegna del progetto di Linguaggi e Tecnologie per il Web. Questo testo è appositamente lungo per testare la visualizzazione in caso di descrizione più lunga e accurata di un particolare evento.");
-var evento5 = new Array(14, 11, 2018, "Lorem ipsum tu matrem ea magnam baldraccam, id est ea faciat bocchinos cumsque.");
+var evento5 = new Array(5, 10, 2018, "Lorem ipsum tu matrem ea magnam baldraccam, id est ea faciat bocchinos cumsque.");
 var lista_eventi = new Array(evento1, evento2, evento3, evento4, evento5);
-
-
-/*
-**=      ____                  _               __                  _   _                 
-**==    / ___|  ___ _ ____   _(_) ___ ___     / _|_   _ _ __   ___| |_(_) ___  _ __  ___ 
-**===   \___ \ / _ \ '__\ \ / / |/ __/ _ \   | |_| | | | '_ \ / __| __| |/ _ \| '_ \/ __|
-**===    ___) |  __/ |   \ V /| | (_|  __/   |  _| |_| | | | | (__| |_| | (_) | | | \__ \
-**==    |____/ \___|_|    \_/ |_|\___\___|   |_|  \__,_|_| |_|\___|\__|_|\___/|_| |_|___/
-**=                                                                                    
-*/
-
 
 function fillEvento(year, month, day, giorno){
 	var lista_classi = giorno.classList;
@@ -62,11 +51,13 @@ function showInAgenda(giorno, evento){
 	var current_event = evento;
 	var current_giorno = giorno;
 	return function writeAgenda() {
+		removeSelected();
 		var descr = current_event[3];
 		var container = document.getElementById("event-container");
 		container.innerHTML = '<div class="evento"><div class="day"> <p class="tcv">' + current_event[0] +'<br>'+
 								monthText[current_event[1]] + '</p></div>' + '<div class="info"><p>' + descr + '</p></div></div>';
-		//this.removeEventListener("click", writeAgenda);
+								
+		document.getElementsByClassName("info")[0].addEventListener("click", aggiungiPreferiti(current_event));
 		
 		this.classList.add("sel");  // --> per mantenere il colore
 		
@@ -84,12 +75,68 @@ function closeAgendaEvent(cella){
 		close_btn.removeEventListener("click", closeAux)
 		loadPreferiti();
 	}
-	
+}
+
+function eventoInPreferiti(evento){
+	var local_preferiti = JSON.parse(localStorage.getItem("eventiPreferiti"));
+	if(local_preferiti == null) return false;
+	for(i=0; i<local_preferiti.length; i++){
+		var current = local_preferiti[i];
+		if(current[0] == evento[0] && current[1] == evento[1] && current[2] == evento[2] && current[3] == evento[3]) return true;
+	}
+	return false;
+}
+
+function aggiungiPreferiti(evento){
+	var local_event = evento;
+	return function(){
+		var local_preferiti = JSON.parse(localStorage.getItem("eventiPreferiti"));
+		if(local_preferiti == null) local_preferiti = new Array(local_event);
+		else {
+			if(!eventoInPreferiti(local_event)) local_preferiti[local_preferiti.length] = local_event;
+		}
+		localStorage.setItem("eventiPreferiti", JSON.stringify(local_preferiti));
+	}
 }
 
 function loadPreferiti(){
-	console.log("TODO");
+	var local_preferiti = JSON.parse(localStorage.getItem("eventiPreferiti"));
+	var container = document.getElementById("event-container");
+	container.innerHTML = "";
+	if(local_preferiti == null) return;
+	for(i=0; i<local_preferiti.length; i++){
+		var evento = local_preferiti[i];
+		container.innerHTML += '<div class="evento"><div class="day"> <p class="tcv">' + evento[0] +'<br>'+
+							monthText[evento[1]] + '</p></div>' + '<div class="info"><p>' +
+							evento[3] + '</p></div></div>';
+	}
 }
+
+function clearPreferiti(){
+	localStorage.setItem("eventiPreferiti", JSON.stringify(null));
+}
+
+function rimuoviPreferiti(evento){
+	//---TODO---
+}
+
+function removeSelected(){
+	var selezionati = document.getElementsByClassName("sel");
+	for(s=0; s<selezionati.length; s++){
+		selezionati[s].classList.remove("sel");
+	}
+}
+
+
+/*
+**=      ____                  _               __                  _   _                 
+**==    / ___|  ___ _ ____   _(_) ___ ___     / _|_   _ _ __   ___| |_(_) ___  _ __  ___ 
+**===   \___ \ / _ \ '__\ \ / / |/ __/ _ \   | |_| | | | '_ \ / __| __| |/ _ \| '_ \/ __|
+**===    ___) |  __/ |   \ V /| | (_|  __/   |  _| |_| | | | | (__| |_| | (_) | | | \__ \
+**==    |____/ \___|_|    \_/ |_|\___\___|   |_|  \__,_|_| |_|\___|\__|_|\___/|_| |_|___/
+**=                                                                                    
+*/
+
 
 function buildToday(){
 	var campo_oggi = document.getElementById("oggi");
@@ -131,10 +178,11 @@ function buildDays(year, month){
 	var counter = (new Date(year, month, 2 - (first_day)) ).getDate();
 	var giorno;
 	var index;
+	removeSelected();
 	
 	for(i=1; i<7; i++){
 		for(j=1; j<8; j++){
-		
+			
 			if(i==1 && j==first_day){
 				active_month = true;
 				counter = 1;
