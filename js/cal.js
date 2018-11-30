@@ -27,12 +27,13 @@ var monthText = ["Gennaio","Febbraio","Marzo","Aprile","Maggio","Giugno","Luglio
 **=                                   
 */
 
-//   Evento = [ giorno, mese: da 0 a 11, anno,  descrizione:String ]
+//   Evento = [ giorno, mese: 0-11, anno,  descrizione:String ]
 
 var evento1 = new Array(22, 11, 2018, "Fine delle lezioni");
 var evento2 = new Array(3, 0, 2019, "Elezioni E Lezioni - The Movie");
 var evento3 = new Array(1, 0, 2020, "Fine del mondo");
-var lista_eventi = new Array(evento1, evento2, evento3);
+var evento4 = new Array(14, 11, 2018, "Primo giorno utile per la consegna del progetto di Linguaggi e Tecnologie per il Web. Questo testo è appositamente lungo per testare la visualizzazione in caso di descrizione più lunga e accurata di un particolare evento.");
+var lista_eventi = new Array(evento1, evento2, evento3, evento4);
 
 
 /*
@@ -60,7 +61,9 @@ function showInAgenda(evento){
 	var current_event = evento;
 	return function() {
 		var descr = current_event[3];
-		//scrivere in agenda
+		var container = document.getElementById("event-container");
+		container.innerHTML = '<div class="evento"><div class="day"> <p class="tcv">' + current_event[0] +'<br>'+
+							  monthText[current_event[1]] + '</p></div>' + '<div class="info"><p>' + descr + '</p></div></div>';
 	}
 }
 
