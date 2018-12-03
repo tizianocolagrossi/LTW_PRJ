@@ -97,3 +97,5 @@ PORCODDIO. Non funziona più un cazzo. PORCODDIO.
 (DAVIDE)
 DIOCANE ABBIAMO FINITO!
 ...Solo la parte offline. Ora si inizia con l'implementazione di tutto il progetto online, con server, database da gestire e un sacco di cazzi su per il culo. Si va.
+(TIZIANO)
+Nuovo branch ora si inizia a smaddonnare serio ! si parte con l'ONLINE
