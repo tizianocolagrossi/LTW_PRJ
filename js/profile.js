@@ -14,6 +14,11 @@ function buildProfileMun(){
 	campo_mun.innerHTML = "MUNICIPIO: " + JSON.parse(localStorage.getItem('logged_user'))[6];
 }
 
+function buildProfileEmail(){
+	var campo_email = document.getElementById('Email');
+	campo_email.innerHTML = "E-mail: " + JSON.parse(localStorage.getItem('logged_user'))[2];
+}
+
 function log_out(){
 	if(window.confirm("Vuoi disconnetterti?")){
 		localStorage.setItem('logged_user', JSON.stringify(null));
