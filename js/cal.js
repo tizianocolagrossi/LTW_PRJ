@@ -47,6 +47,14 @@ function getEvent(year, month, day){
 	return null;
 }
 
+function getEventByDescription(descr){
+	for(l=0; l<lista_eventi.length; l++){
+		var evento = lista_eventi[l];
+		if(evento[3] == descr) return evento;
+	}
+	return null;
+}
+
 function fillEvento(year, month, day, giorno){
 	var classi = giorno.classList;
 	for(k=0; k<lista_eventi.length; k++){
@@ -64,7 +72,6 @@ function showInAgenda(){
 	var current_giorno = this; 
 	var current_event = getEvent(display_anno, display_mese-1, current_giorno.innerText);
 	if(current_event == null){
-		console.log("perchè cazzo ho un event listener?");
 		return;
 	}
 	removeSelected();
@@ -78,7 +85,6 @@ function showInAgenda(){
 	
 	this.classList.add("sel");  // --> per mantenere il colore
 	
-	//current_giorno.removeEventListener("click", writeAgenda)  //--> impedisce più click
 	var close_btn = document.getElementById("close");
 	close_btn.style = "visibility: visible";
 	close_btn.addEventListener("click", closeAgendaEvent(current_giorno, current_event));
@@ -92,7 +98,6 @@ function closeAgendaEvent(giorno, evento){
 		var close_btn = document.getElementById("close");
 		close_btn.style = "visibility: hidden";
 		close_btn.removeEventListener("click", closeAux);
-		//local_giorno.addEventListener("click", showInAgenda(local_giorno, local_event))  //--> rimette i click sul giorno
 		loadPreferiti();
 	}
 }
@@ -138,9 +143,10 @@ function loadPreferiti(){
 								monthText[evento[1]] + '</p></div>' + '<div class="info"><p>' +
 								evento[3] + '</p></div></div>';
 		}
-		var event_list = document.getElementsByClassName("info");
-		for(j=0; j<event_list.length; j++){
-			event_list[j].addEventListener("click", rimuoviPreferiti(evento));
+		var preferiti_in_agenda = document.getElementsByClassName("info");
+		for(j=0; j<preferiti_in_agenda.length; j++){
+			var current_preferito = preferiti_in_agenda[j];
+			current_preferito.addEventListener("click", rimuoviPreferiti(getEventByDescription(current_preferito.innerText)));
 		}
 	}
 }
@@ -152,7 +158,6 @@ function clearPreferiti(){
 function rimuoviPreferiti(evento){
 	var local_event = evento;
 	return function(){
-		console.log(local_event);
 		if(!window.confirm("Vuoi rimuovere l'evento dai tuoi preferiti?")) return;
 		var local_preferiti = JSON.parse(localStorage.getItem("eventiPreferiti"));
 		if(local_preferiti == null) return;
