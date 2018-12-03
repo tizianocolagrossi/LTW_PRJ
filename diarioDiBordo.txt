@@ -92,3 +92,8 @@ Anche oggi ho chiesto a Cristo di scendere in terra per fargli qualche appunto s
 Ormai abbiano quasi finito, sento davide che bestemmia scrivendo jacascript, bel sottofindo, michele che se la prende con daniil perche non si capisce quello che scrive. Una bella giornata insomma!
 (DAVIDE)
 PORCODDIO. Non funziona più un cazzo. PORCODDIO.
+
+#########Giorno 20 (3/12/18)
+(DAVIDE)
+DIOCANE ABBIAMO FINITO!
+...Solo la parte offline. Ora si inizia con l'implementazione di tutto il progetto online, con server, database da gestire e un sacco di cazzi su per il culo. Si va.
