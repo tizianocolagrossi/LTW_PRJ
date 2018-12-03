@@ -73,6 +73,7 @@ function addVoto(id, risultato){
 **=
 */
 
+
 function validateScheda(){
 	var liste = document.getElementsByName("lista");
 	for(i=0; i<liste.length; i++){
@@ -88,14 +89,14 @@ function validateScheda(){
 	console.log("candidato scelto: ");
 	console.log(candidato_scelto);
 	console.log("classe parent candidato: "+candidato_scelto.parentElement.className);
-	console.log(candidato_scelto.parentElement.className[13]);
+	console.log(candidato_scelto.parentElement.attributes[1].value);
 	*/
 	
 	if(lista_scelta != ""){
 		recap_voto = "Hai scelto la lista " + lista_scelta.value;
 		if(candidato_scelto != ""){
 			recap_voto += " della quale hai scelto il candidato " + candidato_scelto.value;
-			var numero_lista_candidato = candidato_scelto.parentElement.className[13]; // <----- implementazione stile Luca Giurato
+			var numero_lista_candidato = candidato_scelto.parentElement.attributes[1].value;
 			if(lista_scelta.value == numero_lista_candidato){
 				recap_voto += ".\nVuoi confermare il voto?";
 				return true;

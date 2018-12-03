@@ -8,6 +8,9 @@
 */
 
 
+var event_handler;
+var showInAgenda_giorno;
+var showInAgenda_evento;
 var dateObj = new Date();
 var mese = dateObj.getUTCMonth() + 1;
 var display_mese = mese;
@@ -36,47 +39,65 @@ var evento4 = new Array(14, 11, 2018, "Primo giorno utile per la consegna del pr
 var evento5 = new Array(5, 10, 2018, "Lorem ipsum tu matrem ea magnam baldraccam, id est ea faciat bocchinos cumsque.");
 var lista_eventi = new Array(evento1, evento2, evento3, evento4, evento5);
 
+function getEvent(year, month, day){
+	for(l=0; l<lista_eventi.length; l++){
+		var evento = lista_eventi[l];
+		if(evento[0] == day && evento[1] == month && evento[2] == year) return evento;
+	}
+	return null;
+}
+
+function getEventByDescription(descr){
+	for(l=0; l<lista_eventi.length; l++){
+		var evento = lista_eventi[l];
+		if(evento[3] == descr) return evento;
+	}
+	return null;
+}
+
 function fillEvento(year, month, day, giorno){
-	var lista_classi = giorno.classList;
+	var classi = giorno.classList;
 	for(k=0; k<lista_eventi.length; k++){
 		var evento = lista_eventi[k];
 		if(evento[0] == day && evento[1] == month && evento[2] == year) {
-			lista_classi.add("ev");
-			giorno.addEventListener("click", showInAgenda(giorno, evento));
+			classi.add("ev");
+			showInAgenda_giorno = giorno;
+			showInAgenda_evento = evento;
+			giorno.addEventListener("click", showInAgenda);
 		}
 	}
 }
 
-function showInAgenda(giorno, evento){
-	var current_event = evento;
-	var current_giorno = giorno;
-	return function writeAgenda() {
-		removeSelected();
-		var descr = current_event[3];
-		var container = document.getElementById("event-container");
-		container.classList.remove("vuoto");
-		container.innerHTML = '<div class="evento"><div class="day"> <p class="tcv">' + current_event[0] +'<br>'+
-								monthText[current_event[1]] + '</p></div>' + '<div class="info"><p>' + descr + '</p></div></div>';
-								
-		document.getElementsByClassName("info")[0].addEventListener("click", aggiungiPreferiti(current_event));
-		
-		this.classList.add("sel");  // --> per mantenere il colore
-		
-		//current_giorno.removeEventListener("click", writeAgenda)  --> tocca levare sta cazzo di funzione diocane
-		var close_btn = document.getElementById("close");
-		close_btn.style = "visibility: visible";
-		close_btn.addEventListener("click", closeAgendaEvent(this));
+function showInAgenda(){
+	var current_giorno = this; 
+	var current_event = getEvent(display_anno, display_mese-1, current_giorno.innerText);
+	if(current_event == null){
+		return;
 	}
+	removeSelected();
+	var descr = current_event[3];
+	var container = document.getElementById("event-container");
+	container.classList.remove("vuoto");
+	container.innerHTML = '<div class="evento"><div class="day"> <p class="tcv">' + current_event[0] +'<br>'+
+							monthText[current_event[1]] + '</p></div>' + '<div class="info"><p>' + descr + '</p></div></div>';
+							
+	document.getElementsByClassName("info")[0].addEventListener("click", aggiungiPreferiti(current_event));
+	
+	this.classList.add("sel");  // --> per mantenere il colore
+	
+	var close_btn = document.getElementById("close");
+	close_btn.style = "visibility: visible";
+	close_btn.addEventListener("click", closeAgendaEvent(current_giorno, current_event));
 }
 
-function closeAgendaEvent(cella){
-	var local_cella = cella;
+function closeAgendaEvent(giorno, evento){
+	var local_giorno = giorno;
+	var local_event = evento;
 	return function closeAux(){
-		console.log(local_cella);
-		local_cella.classList.remove("sel");
+		local_giorno.classList.remove("sel");
 		var close_btn = document.getElementById("close");
 		close_btn.style = "visibility: hidden";
-		close_btn.removeEventListener("click", closeAux)
+		close_btn.removeEventListener("click", closeAux);
 		loadPreferiti();
 	}
 }
@@ -122,9 +143,10 @@ function loadPreferiti(){
 								monthText[evento[1]] + '</p></div>' + '<div class="info"><p>' +
 								evento[3] + '</p></div></div>';
 		}
-		lista_eventi = document.getElementsByClassName("info");
-		for(j=0; j<lista_eventi.length; j++){
-			lista_eventi[j].addEventListener("click", rimuoviPreferiti(evento));
+		var preferiti_in_agenda = document.getElementsByClassName("info");
+		for(j=0; j<preferiti_in_agenda.length; j++){
+			var current_preferito = preferiti_in_agenda[j];
+			current_preferito.addEventListener("click", rimuoviPreferiti(getEventByDescription(current_preferito.innerText)));
 		}
 	}
 }
@@ -136,7 +158,6 @@ function clearPreferiti(){
 function rimuoviPreferiti(evento){
 	var local_event = evento;
 	return function(){
-		console.log(local_event);
 		if(!window.confirm("Vuoi rimuovere l'evento dai tuoi preferiti?")) return;
 		var local_preferiti = JSON.parse(localStorage.getItem("eventiPreferiti"));
 		if(local_preferiti == null) return;
@@ -230,7 +251,7 @@ function buildDays(year, month){
 	var counter = (new Date(year, month, 2 - (first_day)) ).getDate();
 	var giorno;
 	var index;
-	removeSelected();
+	removeSelected();  //---> pulisce i selezionati prima di costruire i giorni
 	
 	for(i=1; i<7; i++){
 		for(j=1; j<8; j++){
@@ -247,22 +268,18 @@ function buildDays(year, month){
 			index = i.toString()+"_"+j.toString();
 			giorno = document.getElementById(index);
 			var lista_classi = giorno.classList;
-			
+			lista_classi.remove("ev");       //---> pulisce gli eventi prima di riempirli 
+			giorno.removeEventListener("click", showInAgenda)  //---> pulisce gli event_listener prima di riempirli
+						
 			if(active_month) {
 				lista_classi.remove("no-mo");
-				lista_classi.remove("ev");
-				giorno.removeEventListener("click", showInAgenda);
 				fillEvento(year, month, counter, giorno);
-				
 			}
 			else {
 				lista_classi.add("no-mo");
-				lista_classi.remove("ev");
-				giorno.removeEventListener("click", showInAgenda);
 			}
 			
 			giorno.innerText = counter;
-			
 			counter++;
 		}
 	}

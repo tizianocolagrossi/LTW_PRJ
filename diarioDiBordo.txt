@@ -95,3 +95,7 @@ PORCODDIO. Non funziona più un cazzo. PORCODDIO.
 #########Giorno 20 (3/12/2018)
 (TIZIANO)
 Ho aggiunto il campo email nella pagina del profilo, vedo che gli eventi funzionano quasi bene sono contento per davide!!
+(DAVIDE)
+DIOCANE ABBIAMO FINITO!
+...Solo la parte offline. Ora si inizia con l'implementazione di tutto il progetto online, con server, database da gestire e un sacco di cazzi su per il culo. Si va.
+
