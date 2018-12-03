@@ -54,6 +54,7 @@ function showInAgenda(giorno, evento){
 		removeSelected();
 		var descr = current_event[3];
 		var container = document.getElementById("event-container");
+		container.classList.remove("vuoto");
 		container.innerHTML = '<div class="evento"><div class="day"> <p class="tcv">' + current_event[0] +'<br>'+
 								monthText[current_event[1]] + '</p></div>' + '<div class="info"><p>' + descr + '</p></div></div>';
 								
@@ -61,6 +62,7 @@ function showInAgenda(giorno, evento){
 		
 		this.classList.add("sel");  // --> per mantenere il colore
 		
+		//current_giorno.removeEventListener("click", writeAgenda)  --> tocca levare sta cazzo di funzione diocane
 		var close_btn = document.getElementById("close");
 		close_btn.style = "visibility: visible";
 		close_btn.addEventListener("click", closeAgendaEvent(this));
@@ -68,8 +70,10 @@ function showInAgenda(giorno, evento){
 }
 
 function closeAgendaEvent(cella){
+	var local_cella = cella;
 	return function closeAux(){
-		cella.classList.remove("sel");
+		console.log(local_cella);
+		local_cella.classList.remove("sel");
 		var close_btn = document.getElementById("close");
 		close_btn.style = "visibility: hidden";
 		close_btn.removeEventListener("click", closeAux)
@@ -82,6 +86,7 @@ function eventoInPreferiti(evento){
 	if(local_preferiti == null) return false;
 	for(i=0; i<local_preferiti.length; i++){
 		var current = local_preferiti[i];
+		if(current == null) continue;
 		if(current[0] == evento[0] && current[1] == evento[1] && current[2] == evento[2] && current[3] == evento[3]) return true;
 	}
 	return false;
@@ -90,6 +95,7 @@ function eventoInPreferiti(evento){
 function aggiungiPreferiti(evento){
 	var local_event = evento;
 	return function(){
+		if(!window.confirm("Vuoi aggiungere l'evento ai tuoi preferiti?")) return;
 		var local_preferiti = JSON.parse(localStorage.getItem("eventiPreferiti"));
 		if(local_preferiti == null) local_preferiti = new Array(local_event);
 		else {
@@ -103,12 +109,23 @@ function loadPreferiti(){
 	var local_preferiti = JSON.parse(localStorage.getItem("eventiPreferiti"));
 	var container = document.getElementById("event-container");
 	container.innerHTML = "";
-	if(local_preferiti == null) return;
-	for(i=0; i<local_preferiti.length; i++){
-		var evento = local_preferiti[i];
-		container.innerHTML += '<div class="evento"><div class="day"> <p class="tcv">' + evento[0] +'<br>'+
-							monthText[evento[1]] + '</p></div>' + '<div class="info"><p>' +
-							evento[3] + '</p></div></div>';
+	if(local_preferiti == null || eventiPreferitiIsNull()) {
+		container.classList.add("vuoto");
+		return;
+	}
+	else{
+		container.classList.remove("vuoto");
+		for(i=0; i<local_preferiti.length; i++){
+			var evento = local_preferiti[i];
+			if(evento == null) continue;
+			container.innerHTML += '<div class="evento"><div class="day"> <p class="tcv">' + evento[0] +'<br>'+
+								monthText[evento[1]] + '</p></div>' + '<div class="info"><p>' +
+								evento[3] + '</p></div></div>';
+		}
+		lista_eventi = document.getElementsByClassName("info");
+		for(j=0; j<lista_eventi.length; j++){
+			lista_eventi[j].addEventListener("click", rimuoviPreferiti(evento));
+		}
 	}
 }
 
@@ -117,7 +134,27 @@ function clearPreferiti(){
 }
 
 function rimuoviPreferiti(evento){
-	//---TODO---
+	var local_event = evento;
+	return function(){
+		console.log(local_event);
+		if(!window.confirm("Vuoi rimuovere l'evento dai tuoi preferiti?")) return;
+		var local_preferiti = JSON.parse(localStorage.getItem("eventiPreferiti"));
+		if(local_preferiti == null) return;
+		else {
+			for(i=0; i<local_preferiti.length; i++){
+				var current = local_preferiti[i];
+				if(current == null) continue;
+				else if(current[0] == local_event[0] && current[1] == local_event[1] && 
+				   current[2] == local_event[2] && current[3] == local_event[3]) {
+				   local_preferiti[i] = null;
+				   break;
+				}
+			}
+		}
+		localStorage.setItem('eventiPreferiti', JSON.stringify(local_preferiti));
+		loadPreferiti();
+	}
+
 }
 
 function removeSelected(){
@@ -125,6 +162,21 @@ function removeSelected(){
 	for(s=0; s<selezionati.length; s++){
 		selezionati[s].classList.remove("sel");
 	}
+}
+
+function eventiPreferitiIsNull(){
+	var local_preferiti = JSON.parse(localStorage.getItem("eventiPreferiti"));
+	var counter = 0;
+	if(local_preferiti == null) return false;
+	for(y=0; y<local_preferiti.length; y++){
+		if(local_preferiti[y] == null) counter++;
+	}
+	if(counter == local_preferiti.length){
+		local_preferiti = new Array();
+		localStorage.setItem('eventiPreferiti', JSON.stringify(local_preferiti));  //risparmia spazio
+		return true;
+	}
+	return false;
 }
 
 
@@ -199,7 +251,9 @@ function buildDays(year, month){
 			if(active_month) {
 				lista_classi.remove("no-mo");
 				lista_classi.remove("ev");
+				giorno.removeEventListener("click", showInAgenda);
 				fillEvento(year, month, counter, giorno);
+				
 			}
 			else {
 				lista_classi.add("no-mo");
