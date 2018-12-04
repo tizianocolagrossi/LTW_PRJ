@@ -10,3 +10,14 @@ services:
     expose:
       - 80
       - 443
+  node:
+    image: "node:8"
+    user: node
+    working_dir: /home/node
+    environment:
+      - NODE_ENV=production
+    volumes:
+      - ./node1c:/home/node
+    expose:
+      - 8081
+    command: "npm start"
