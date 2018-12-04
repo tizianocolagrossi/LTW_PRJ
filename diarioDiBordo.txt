@@ -1,4 +1,4 @@
-#########Giorno 1 (14/11/18):
+﻿#########Giorno 1 (14/11/18):
 Ancora non avevamo pensato a un diario di bordo
 
 
@@ -99,3 +99,6 @@ DIOCANE ABBIAMO FINITO!
 ...Solo la parte offline. Ora si inizia con l'implementazione di tutto il progetto online, con server, database da gestire e un sacco di cazzi su per il culo. Si va.
 (TIZIANO)
 Nuovo branch ora si inizia a smaddonnare serio ! si parte con l'ONLINE
+#########Giorno 21 (4/12/18)
+(TIZIANO)
+sistemato nginx e tirato su il primo application server usando nodejs aggiunto quindi nell docker-compose e aggiunto script di test dell application server. DA RICORDARE E NON DIMENTICARE MAI E POI MAI CHE LE PORTE SONO VISIBILI ESTERNAMENTE SOLO SE SI MAPPANO NEL SETTORE ports: DEL DOCKER COMPOSE.
