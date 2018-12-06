@@ -38,12 +38,12 @@ services:
     expose:
       - 8081
     command: "npm start"
-  couch:
-    image: "couchdb"
-    environment:
-      - COUCHDB_USER=admin
-      - COUCHDB_PASSWORD=password
-    ports: 
-      - "5984:5984"
-    expose: 
-      - 5984
+#  couch:
+#    image: "couchdb"
+#    environment:
+#      - COUCHDB_USER=admin
+#      - COUCHDB_PASSWORD=password
+#    ports: 
+#      - "5984:5984"
+#    expose: 
+#      - 5984
