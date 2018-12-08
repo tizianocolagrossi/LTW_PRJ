@@ -24,13 +24,13 @@
     <div id="login_area"> 
             <h1>Accedi per votare</h1>
             <table>
-                <form method="post" action="" name="login">
+                <form method="post" action="/appserver/login" name="login">
                     <tr><td><input type="text" name="name" placeholder="CID" maxlength="16"></td><td>
-                    		<input type="password" name="password" placeholder="Password" maxlength="20" onkeypress="if(event.keyCode==13){log_in()}" ></td></tr>
+                    		<input type="password" name="password" placeholder="Password" maxlength="20"></td></tr>
             	    <tr>
                         <td colspan="2">
            	                <input class="btn" type="button" value="Registrati" onClick="window.location.href='registrati.html'">
-                            <input class="btn" type="button" name="Accedi" value="Accedi" onClick="log_in()"> 
+                            <input class="btn" type="submit" name="Accedi" value="Accedi"> 
                         </td>
                     </tr>
                     <tr>                

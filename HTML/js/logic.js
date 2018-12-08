@@ -211,7 +211,7 @@ function validateSecretCode(secret_code){
 **=                                                                                    
 */
 
-
+/*
 function log_in(){
 	console.log("Trying login");
 	var ID_value = document.getElementsByName('name')[0].value;
@@ -239,7 +239,7 @@ function log_in(){
 		}
 	}else error("Carta d'Identità non valida");
 }
-
+*/
 function log_out(){
 	if(window.confirm("Vuoi disconnetterti?")){
 		localStorage.setItem('logged_user', JSON.stringify(null));
