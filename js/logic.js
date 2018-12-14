@@ -147,7 +147,7 @@ function addVoto(id, risultato){
 */
 
 
-var ID_reg_expression = /[A-Z][A-Z]\d{7}|C[A-Z]\d{5}[A-Z][A-Z]/;
+var ID_reg_expression = /([A-Z][A-Z]\d{7})|(C[A-Z]\d{5}[A-Z][A-Z])/;
 var Email_reg_expression = /[A-Z||a-z||0-9]+@[A-Z||a-z]+\.[A-Z||a-z]/;
 var CF_reg_expression = /[A-Z]{6}\d{2}[A-Z]\d{2}[A-Z]\d{3}[A-Z]/;
 
@@ -164,6 +164,7 @@ var CF_reg_expression = /[A-Z]{6}\d{2}[A-Z]\d{2}[A-Z]\d{3}[A-Z]/;
 
 function validateID(ID_value){
 	if(ID_value == "") return false;
+	if(ID_value.length > 9) return false;
 	var ret_boolean = ID_reg_expression.test(ID_value);
 	return ret_boolean;
 }
@@ -191,6 +192,7 @@ function validateEmail(Email_value){
 
 function validateCF(CF_value){
 	if(CF_value == "") return false;
+	if(CF_value.length > 16) return false;
 	var ret_boolean = CF_reg_expression.test(CF_value);
 	return ret_boolean;
 }
@@ -235,7 +237,7 @@ function log_in(){
 				error("La password non può essere vuota");
 				break;
 			default:
-				error("Errore irreparabile del Kernel");
+				error("Errore irreparabile del Kernel"); // =)
 		}
 	}else error("Carta d'Identità non valida");
 }
@@ -264,12 +266,14 @@ function register(){
 				if(validateCF(CF_value)){
 					if(password != ""){
 						if(password == confirm_pw){
-							if(!containsDB(ID_value)){
-								var new_user = new Array(ID_value, password, email, nome, cognome, CF_value, municipio, new Array());
-								addUser(new_user); 
-								console.log("Succesfully registered");
-								window.location.href=("reg_success.html");
-							}else error("Carta d'Identità già registrata");						
+							if(municipio != "---"){
+								if(!containsDB(ID_value)){
+									var new_user = new Array(ID_value, password, email, nome, cognome, CF_value, municipio, new Array());
+									addUser(new_user); 
+									console.log("Succesfully registered");
+									window.location.href=("reg_success.html");
+								}else error("Carta d'Identità già registrata");	
+							}else error("Selezionare un municipio");					
 						}else error("Le password inserite non corrispondono");
 					}else error("Password non valida")
 				}else error("Codice fiscale non valido");
@@ -301,22 +305,48 @@ function modifyPassword(){
 	var old_pw = document.getElementById("old_pw").value;
 	var new_pw = document.getElementById("new_pw").value;
 	var confirm_pw = document.getElementById("confirm_pw").value;
+	var valido = false;
 	
-	if(validatePW(current_user[0], old_pw)){
-		if(new_pw == confirm_pw){
-			for(i=0; i<localDb.length; i++){
-				if(localDb[i][0] == current_user[0]){
-					current_user[1] = new_pw;
-					localDb[i][1] = new_pw;
-					break;
+	var log_ret = validatePW(current_user[0], old_pw);
+	
+	switch(log_ret){
+		case 1: 
+			if(new_pw == confirm_pw){
+				for(i=0; i<localDb.length; i++){
+					if(localDb[i][0] == current_user[0]){
+						current_user[1] = new_pw;
+						localDb[i][1] = new_pw;
+						valido = true;
+						break;
+					}
 				}
+			}else {
+				error("Le nuove password inserite non corrispondono");
+				valido=false;
 			}
-		}else error("Le nuove password inserite non corrispondono");
-	}else error("Password non corretta");
+			break;
+		case -1:  //non può succedere, l'utente sarà già loggato e quindi registrato, ma meglio gestirla
+			error("Carta d'Identità non registrata");
+			valido = false; 
+			break;
+		case -2:
+			error("Password non corretta");
+			valido = false;
+			break;
+		case -3:
+			error("La password non può essere vuota");
+			valido = false;
+			break;
+		default:
+			error("Errore irreparabile del Kernel");  // =)
+			valido = false;
+	}
 	
-	refreshLoggedUser(current_user);
-	refreshDB(localDb);
-	window.location.href = "change_pw_success.html";
+	if(valido){
+		refreshLoggedUser(current_user);
+		refreshDB(localDb);
+		window.location.href = "change_pw_success.html";
+	}
 }
 
 function modifyEmail(){
@@ -324,22 +354,46 @@ function modifyEmail(){
 	var current_user = getLoggedUser();
 	var pw = document.getElementById("e-pw").value;
 	var new_email = document.getElementById("email").value;
+	var valido = false;
 	
-	if(validatePW(current_user[0], pw)){
-		for(i=0; i<localDb.length; i++){
-			if(localDb[i][0] == current_user[0]){
-				current_user[2] = new_email;
-				localDb[i][2] = new_email;
-				break;
+	var log_ret = validatePW(current_user[0], old_pw);
+	
+	switch(log_ret){
+		case 1: 
+			for(i=0; i<localDb.length; i++){
+				if(localDb[i][0] == current_user[0]){
+					current_user[2] = new_email;
+					localDb[i][2] = new_email;
+					valido = true;
+					break;
+				}
 			}
-		}
-	}else error("Password non corretta");
+			break;
+		case -1:  //non può succedere, l'utente sarà già loggato e quindi registrato, ma meglio gestirla
+			error("Carta d'Identità non registrata");
+			valido = false; 
+			break;
+		case -2:
+			error("Password non corretta");
+			valido = false;
+			break;
+		case -3:
+			error("La password non può essere vuota");
+			valido = false;
+			break;
+		default:
+			error("Errore irreparabile del Kernel");  // =)
+			valido = false;
+	}
 	
-	refreshLoggedUser(current_user);
-	refreshDB(localDb);
-	window.location.href = "change_email_success.html";
+	if(valido){
+		refreshLoggedUser(current_user);
+		refreshDB(localDb);
+		window.location.href = "change_email_success.html";
+	}
 }
 
 function error(error_message){
 	window.alert(error_message);
 }
+

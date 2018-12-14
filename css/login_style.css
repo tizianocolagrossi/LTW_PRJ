@@ -17,6 +17,9 @@ header > img{
     background-color: #ffb300;
     width: 100%;
 }
+p{
+	font-size: 1.35em;
+}
 article{
     padding: 0em 5em 1em 5em;
 }
