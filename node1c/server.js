@@ -23,7 +23,11 @@ app.post('/appserver/login', form(field('name').trim().required().is(ID_reg_expr
     else{
         console.log("id:", req.form.name );
         console.log("pw:", req.form.password );
-        res.send("Login da verificare con il database ID: "+req.form.name+"PW: "+req.form.password);
+        //verificare i dati poi inviare cookie con i dati Nome Cognome Email Municipio ID
+        //po leggere lato web server cookie e popolare la pagina html
+        //res.send("Login da verificare con il database ID: "+req.form.name+"PW: "+req.form.password);
+        res.redirect("/profilo.html").send("prova");
+        
     }
 });
 
