@@ -356,17 +356,22 @@ function modifyEmail(){
 	var new_email = document.getElementById("email").value;
 	var valido = false;
 	
-	var log_ret = validatePW(current_user[0], old_pw);
+	var log_ret = validatePW(current_user[0], pw);
 	
 	switch(log_ret){
-		case 1: 
-			for(i=0; i<localDb.length; i++){
-				if(localDb[i][0] == current_user[0]){
-					current_user[2] = new_email;
-					localDb[i][2] = new_email;
-					valido = true;
-					break;
+		case 1:
+			if(validateEmail(new_email)){
+				for(i=0; i<localDb.length; i++){
+					if(localDb[i][0] == current_user[0]){
+						current_user[2] = new_email;
+						localDb[i][2] = new_email;
+						valido = true;
+						break;
+					}
 				}
+			}else{
+				error("E-mail non valida");
+				valido = false;
 			}
 			break;
 		case -1:  //non può succedere, l'utente sarà già loggato e quindi registrato, ma meglio gestirla
