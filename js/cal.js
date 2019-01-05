@@ -32,11 +32,11 @@ var monthText = ["Gennaio","Febbraio","Marzo","Aprile","Maggio","Giugno","Luglio
 
 //   Evento = [ giorno, mese: 0-11, anno,  descrizione:String ]
 
-var evento1 = new Array(22, 11, 2018, "Fine delle lezioni");
-var evento2 = new Array(3, 0, 2019, "Elezioni E Lezioni - The Movie");
+var evento1 = new Array(21, 11, 2018, "Fine delle lezioni");
+var evento2 = new Array(3, 1, 2019, "Elezioni E Lezioni - The Movie");
 var evento3 = new Array(1, 0, 2020, "Fine del mondo");
 var evento4 = new Array(14, 11, 2018, "Primo giorno utile per la consegna del progetto di Linguaggi e Tecnologie per il Web. Questo testo è appositamente lungo per testare la visualizzazione in caso di descrizione più lunga e accurata di un particolare evento.");
-var evento5 = new Array(5, 10, 2018, "Lorem ipsum tu matrem ea magnam baldraccam, id est ea faciat bocchinos cumsque.");
+var evento5 = new Array(1, 0, 2019, "Festa di capodanno.");
 var lista_eventi = new Array(evento1, evento2, evento3, evento4, evento5);
 
 function getEvent(year, month, day){

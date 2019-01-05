@@ -43,8 +43,8 @@ function addVoto(id, risultato){
 	var votazioni_utente = current_user[7];
 	
 	if(votoPossibile()){
-		if(votazioni_utente.length == 0) votazioni_utente = new Array(nuova_votazione);  // non so se è necessario, data com'è fatta
-		else votazioni_utente[votazioni_utente.length] = nuova_votazione;                // la registrazione di un nuovo utente
+		if(votazioni_utente.length == 0) votazioni_utente = new Array(nuova_votazione);  
+		else votazioni_utente[votazioni_utente.length] = nuova_votazione;                
 		current_user[7] = votazioni_utente;
 		
 		for(i=0; i<local_db.length; i++){

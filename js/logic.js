@@ -72,7 +72,7 @@ function addEntry(CID, pw, email, nome, cognome, CF, mun){
 function addUser(user){
 	var localDb = getDB();
 	if(localDb == null) {
-		inizializeDB();
+		inizializeDB();   // implementata così in modo da avere sempre degli utenti già registrati con cui fare delle prove
 		addUser(user);
 	}
 	else{
@@ -113,8 +113,8 @@ function addVoto(id, risultato){
 	var nuova_votazione = new Array(id, risultato);
 	var votazioni_utente = current_user[7];
 	
-	if(votazioni_utente.length == 0) votazioni_utente = new Array(nuova_votazione);  // non so se è necessario, data com'è fatta
-	else votazioni_utente[votazioni_utente.length] = nuova_votazione;                // la registrazione di un nuovo utente
+	if(votazioni_utente.length == 0) votazioni_utente = new Array(nuova_votazione);  
+	else votazioni_utente[votazioni_utente.length] = nuova_votazione;                
 	current_user[7] = votazioni_utente;
 	setUser(current_user[0], current_user);
 	
